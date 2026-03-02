@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salla Abhitej | Portfolio</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Portfolio of Salla Abhitej, a Code Developer and Innovator specializing in AI and Tech. Graduate from VIGNAN University.">
+  <meta name="keywords" content="Salla Abhitej, Portfolio, Developer, AI, IT, VIGNAN, Machine Learning, Python, Java">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/Abhitej-cyber">
+  <meta property="og:title" content="Salla Abhitej | Portfolio">
+  <meta property="og:description"
+    content="Innovation in AI and elegant code developments. Explore my projects and certificates.">
+  <meta property="og:image" content="images/profile.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Salla Abhitej | Portfolio">
+  <meta property="twitter:description"
+    content="Innovation in AI and elegant code developments. Explore my projects and certificates.">
+  <meta property="twitter:image" content="images/profile.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f4ff',
+              100: '#dce4ff',
+              200: '#bfcdff',
+              300: '#91abff',
+              400: '#5c7bff',
+              500: '#3752f9',
+              600: '#2336ec',
+              700: '#1a27d8',
+              800: '#1b23ae',
+              900: '#1c248b',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif'],
+          },
+          animation: {
+            'gradient': 'gradient 8s linear infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            gradient: {
+              '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+              '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #030712;
+      color: #f3f4f6;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .glass-nav {
+      background: rgba(3, 7, 18, 0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-card {
+      background: rgba(31, 41, 55, 0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      background: rgba(31, 41, 55, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px -10px rgba(55, 82, 249, 0.3);
+    }
+
+    .hero-gradient {
+      background: linear-gradient(-45deg, #1e3a8a, #3730a3, #4c1d95, #1e3a8a);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #60a5fa, #a78bfa, #f472b6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .scroll-indicator {
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-10px);
+      }
+
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* Hide scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #030712;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #1f2937;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #374151;
+    }
+
+    /* Custom Cursor Styles */
+    #cursor {
+      width: 8px;
+      height: 8px;
+      background: #3752f9;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 100;
+      transition: transform 0.1s;
+    }
+
+    #cursor-follower {
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(55, 82, 249, 0.3);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 99;
+      transition: all 0.15s ease-out;
+    }
+
+    .cursor-active #cursor-follower {
+      transform: scale(1.5);
+      background: rgba(55, 82, 249, 0.1);
+      border-color: rgba(55, 82, 249, 0.6);
+    }
+
+    @media (max-width: 768px) {
+
+      #cursor,
+      #cursor-follower {
+        display: none;
+      }
+
+      body {
+        cursor: auto !important;
+      }
+    }
+
+    body {
+      cursor: none;
+    }
+
+    a,
+    button,
+    .cert-view-btn {
+      cursor: none;
+    }
+  </style>
+</head>
+
+<body class="selection:bg-primary-500 selection:text-white">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold font-heading gradient-text tracking-tighter">SA.</a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="#about" class="hover:text-primary-400 transition-colors">About</a>
+        <a href="#projects" class="hover:text-primary-400 transition-colors">Projects</a>
+        <a href="#certification" class="hover:text-primary-400 transition-colors">Certificates</a>
+        <a href="#skills" class="hover:text-primary-400 transition-colors">Skills</a>
+        <a href="#contact" class="hover:text-primary-400 transition-colors">Contact</a>
+      </div>
+
+      <button class="md:hidden text-white" id="menu-btn">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-menu"
+      class="hidden md:hidden absolute top-full left-0 right-0 bg-gray-900 border-b border-white/10 p-6 flex flex-col gap-4 text-center">
+      <a href="#about" class="hover:text-primary-400 transition-colors">About</a>
+      <a href="#projects" class="hover:text-primary-400 transition-colors">Projects</a>
+      <a href="#certification" class="hover:text-primary-400 transition-colors">Certificates</a>
+      <a href="#skills" class="hover:text-primary-400 transition-colors">Skills</a>
+      <a href="#contact" class="hover:text-primary-400 transition-colors">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen relative flex items-center justify-center overflow-hidden pt-20">
+    <!-- Background Orbs -->
+    <div class="absolute top-1/4 -left-20 w-72 h-72 bg-primary-600/30 rounded-full blur-[100px] animate-pulse"></div>
+    <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] animate-pulse"
+      style="animation-delay: 2s"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+      <div
+        class="inline-block px-4 py-1 rounded-full bg-white/5 border border-white/10 text-primary-400 text-sm font-medium mb-6 animate-fade-in">
+        Available for New Opportunities
+      </div>
+      <h1 class="text-5xl md:text-8xl font-bold font-heading mb-6 tracking-tight">
+        Hi, I'm <span class="gradient-text">Salla Abhitej</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+        Code Developer | Innovator | Tech Enthusiast. Building the future with intelligent systems and elegant code.
+      </p>
+
+      <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+        <button id="view-resume-btn"
+          class="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-2xl font-semibold transition-all shadow-lg shadow-primary-500/25 flex items-center gap-2 group">
+          View Resume
+          <i data-lucide="eye" class="w-5 h-5"></i>
+        </button>
+        <a href="#projects"
+          class="px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-2xl font-semibold transition-all">
+          View My Work
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 scroll-indicator">
+      <i data-lucide="chevron-down" class="text-gray-500 w-8 h-8"></i>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-32 relative">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex flex-col items-center text-center mb-16">
+        <h2 class="text-4xl font-bold font-heading mb-4">About Me</h2>
+        <div class="w-20 h-1.5 bg-primary-500 rounded-full"></div>
+      </div>
+
+      <div class="glass-card p-8 md:p-12 rounded-3xl">
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+          I'm a B.Tech student in Information Technology at <span class="text-white font-semibold">VIGNAN</span>, driven
+          by a passion for Artificial Intelligence and real-world applications.
+        </p>
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+          My goal is to blend technology with purpose, creating solutions that not only showcase innovation but also
+          make a difference. I strongly believe that <span class="text-primary-400 italic font-medium">"Technology rules
+            the future"</span> — and that's the motto I live by.
+        </p>
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+          Whether it's building with code, experimenting with new tech, or collaborating on forward-thinking ideas, I'm
+          always eager to learn, build, and contribute to a better tomorrow.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-32 bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-between items-end mb-16">
+        <div>
+          <h2 class="text-4xl font-bold font-heading mb-4">Featured Projects</h2>
+          <p class="text-gray-400">Selected work that highlights my skills and experience.</p>
+        </div>
+        <a href="https://github.com/Abhitej-cyber" target="_blank"
+          class="hidden md:flex items-center gap-2 text-primary-400 hover:text-primary-300 transition-colors">
+          All Projects <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="glass-card group overflow-hidden rounded-3xl flex flex-col h-full">
+          <div class="relative aspect-video overflow-hidden">
+            <img src="images/projects/eyesight.png" alt="Eyesight Detection"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+            <div
+              class="absolute bottom-4 left-4 w-10 h-10 bg-primary-600/30 backdrop-blur-md rounded-xl flex items-center justify-center text-primary-400">
+              <i data-lucide="eye" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-4">Pupil Eyesight Detection</h3>
+            <p class="text-gray-400 mb-8 flex-grow">AI-powered mobile app to detect user's eyesight using just a phone
+              camera with advanced pupil tracking.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">OpenCV</span>
+              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">Python</span>
+              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">Mobile</span>
+            </div>
+            <a href="#" class="text-primary-400 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+              View Details <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass-card group overflow-hidden rounded-3xl flex flex-col h-full">
+          <div class="relative aspect-video overflow-hidden">
+            <img src="images/projects/helmet.png" alt="Helmet Detection"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+            <div
+              class="absolute bottom-4 left-4 w-10 h-10 bg-purple-600/30 backdrop-blur-md rounded-xl flex items-center justify-center text-purple-400">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-4">Helmet Wearing Detection</h3>
+            <p class="text-gray-400 mb-8 flex-grow">IoT solution using Gyroscope sensors to detect movement and notify
+              users with real-time safety alerts.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">Raspberry
+                Pi</span>
+              <span
+                class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">Arduino</span>
+              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">Python</span>
+            </div>
+            <a href="#" class="text-primary-400 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+              GitHub Repo <i data-lucide="github" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass-card group overflow-hidden rounded-3xl flex flex-col h-full">
+          <div class="relative aspect-video overflow-hidden">
+            <img src="images/projects/quiz.png" alt="Intelligence Quiz"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+            <div
+              class="absolute bottom-4 left-4 w-10 h-10 bg-pink-600/30 backdrop-blur-md rounded-xl flex items-center justify-center text-pink-400">
+              <i data-lucide="brain-circuit" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-4">Intelligence Quiz Game</h3>
+            <p class="text-gray-400 mb-8 flex-grow">Interactive application designed to evaluate student learning
+              through dynamic questioning logic.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">C</span>
+              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">Logic
+                Design</span>
+            </div>
+            <a href="#" class="text-primary-400 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+              Live Demo <i data-lucide="play" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certification Section -->
+  <section id="certification" class="py-32">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold font-heading mb-4">Certifications</h2>
+        <p class="text-gray-400">Recognized achievements and learning milestones.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- AI & Data Fest -->
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Microsoft</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">AI & Data Fest 2025</h3>
+          </div>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Appreciation for successful participation in AI & Data Fest
+            2025 held at Microsoft Campus, Hyderabad.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+            <span class="text-xs text-gray-500 font-medium">May 2025</span>
+            <button
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              data-title="AI & Data Fest 2025" data-org="Microsoft" data-image="resume/microsoft_fest.jpg"
+              data-desc="This is to certify that S. Abhitej actively participated in the AI & Data Fest 2025 held at Microsoft Campus Building 1, Gachibowli, Hyderabad. The event focused on the latest innovations in Artificial Intelligence and Data Science.">
+              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- HackWithHyderabad -->
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">HackWithIndia</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">HackWithHyderabad</h3>
+          </div>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Certificate of participation in the hackathon held at
+            Microsoft Hyderabad, focusing on innovation and collaboration.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+            <span class="text-xs text-gray-500 font-medium">Nov 2024</span>
+            <button
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              data-title="HackWithHyderabad" data-org="HackWithIndia" data-image="resume/hackathon.jpg"
+              data-desc="Certified participation in the HackWithHyderabad Hackathon held at Microsoft Office, Hyderabad. Recognized for curiosity, collaboration, and the true spirit of innovation during the event.">
+              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- TASK Frontend -->
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">TASK</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Frontend HTML5 & CSS3</h3>
+          </div>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Completed a specialized three-day training program conducted
+            by Telangana Academy for Skill and Knowledge.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+            <span class="text-xs text-gray-500 font-medium">Oct 2024</span>
+            <button
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              data-title="Frontend with HTML5 & CSS3" data-org="TASK" data-image="resume/frontend_task.jpg"
+              data-desc="Successfully completed a three-day intensive training on Frontend Development using HTML5 and CSS3, conducted by Telangana Academy for Skill and Knowledge (TASK) in October 2024.">
+              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- NxtWave GenAI -->
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">NxtWave</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Generative AI Tools</h3>
+          </div>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Participated in a workshop on gaining career advantages
+            through Generative AI tools and LLMs.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+            <span class="text-xs text-gray-500 font-medium">Oct 2024</span>
+            <button
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              data-title="Career Advantage with GenAI" data-org="NxtWave" data-image="resume/genai_nxtwave.jpg"
+              data-desc="Participated in the workshop 'How to gain career advantage with Generative AI tools' conducted at Vignan Institute of Technology & Science. The workshop covered essential skills for the AI era.">
+              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Python HackerRank -->
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">HackerRank</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Python Programming</h3>
+          </div>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Demonstrated expertise in functions, loops, and complex data
+            structures through rigorous testing.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+            <span class="text-xs text-gray-500 font-medium">Skills Verified</span>
+            <button
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              data-title="Python (Basic) Certificate" data-org="HackerRank"
+              data-desc="Earned the Python (Basic) certification from HackerRank by demonstrating proficiency in various Python concepts including data structures, loops, and functional programming.">
+              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Google GenAI -->
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Google Cloud</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">GenAI Fundamentals</h3>
+          </div>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Covered LLMs, prompt engineering, diffusion models, and ethics
+            of AI applications.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+            <span class="text-xs text-gray-500 font-medium">Professional</span>
+            <button
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              data-title="Generative AI Fundamentals" data-org="Google Cloud"
+              data-desc="Completed the Generative AI Fundamentals series, covering foundational concepts of large language models, image generation, and the ethical considerations of AI development.">
+              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-32 bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold font-heading text-center mb-20 text-center">Technical Arsenal</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Langs -->
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold flex items-center gap-3">
+            <i data-lucide="code-2" class="text-primary-500"></i> Languages
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all">Java</span>
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all">Python</span>
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all">C
+              Programming</span>
+          </div>
+        </div>
+
+        <!-- Web -->
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold flex items-center gap-3">
+            <i data-lucide="globe" class="text-purple-500"></i> Web Stack
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all">HTML5</span>
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all">CSS3</span>
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all">JavaScript</span>
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all">Tailwind
+              CSS</span>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold flex items-center gap-3">
+            <i data-lucide="database" class="text-pink-500"></i> Data & Core
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all">MySQL</span>
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all">JDBC</span>
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all">OOPs</span>
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all">OS</span>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold flex items-center gap-3">
+            <i data-lucide="tool" class="text-emerald-500"></i> Tools
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all">Git
+              / GitHub</span>
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all">VS
+              Code</span>
+            <span
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all">Eclipse</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-32 relative overflow-hidden">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-600/10 rounded-full blur-[100px]">
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <div class="glass-card p-12 rounded-[40px] text-center">
+        <h2 class="text-4xl font-bold font-heading mb-6 tracking-tight">Let's Connect</h2>
+        <p class="text-xl text-gray-400 mb-12">I'm always open to discussing new projects, creative ideas or
+          opportunities to be part of your visions.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="mailto:abhitejabhitej19@gmail.com"
+            class="p-6 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-all flex flex-col items-center gap-4">
+            <div class="w-12 h-12 bg-primary-600/20 rounded-2xl flex items-center justify-center text-primary-400">
+              <i data-lucide="mail"></i>
+            </div>
+            <span class="font-medium text-sm truncate w-full">abhitejabhitej19@gmail.com</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/abhitej-salla-aa9911373/" target="_blank"
+            class="p-6 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-all flex flex-col items-center gap-4">
+            <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center text-blue-400">
+              <i data-lucide="linkedin"></i>
+            </div>
+            <span class="font-medium">Abhitej Salla</span>
+          </a>
+
+          <a href="https://github.com/Abhitej-cyber" target="_blank"
+            class="p-6 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-all flex flex-col items-center gap-4">
+            <div class="w-12 h-12 bg-gray-600/20 rounded-2xl flex items-center justify-center text-gray-400">
+              <i data-lucide="github"></i>
+            </div>
+            <span class="font-medium">Abhitej-cyber</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-white/5 text-center text-gray-500 text-sm">
+    <div class="max-w-7xl mx-auto px-6">
+      <p>&copy; 2024 Salla Abhitej. Built with passion and code. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Resume Modal -->
+  <div id="resume-modal" class="fixed inset-0 z-[60] hidden">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="modal-backdrop"></div>
+
+    <!-- Content -->
+    <div class="absolute inset-0 flex items-center justify-center p-4 md:p-10 pointer-events-none">
+      <div
+        class="bg-gray-900 w-full max-w-5xl h-full max-h-[90vh] rounded-[32px] border border-white/10 shadow-2xl flex flex-col pointer-events-auto overflow-hidden animate-scale-in">
+        <!-- Modal Header -->
+        <div class="p-6 border-b border-white/10 flex justify-between items-center bg-gray-900/50 backdrop-blur-md">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-primary-600/20 rounded-xl flex items-center justify-center text-primary-400">
+              <i data-lucide="file-text"></i>
+            </div>
+            <div>
+              <h3 class="font-bold font-heading text-lg">S_Abhitej_Resume.docx</h3>
+              <p class="text-xs text-gray-500">Curriculum Vitae</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="S_Abhitej_Resume.docx" download
+              class="p-2 hover:bg-white/5 rounded-lg text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+              <i data-lucide="download" class="w-5 h-5"></i>
+              <span class="hidden md:inline">Download</span>
+            </a>
+            <button id="close-resume"
+              class="p-2 hover:bg-white/5 rounded-lg text-gray-400 hover:text-white transition-colors">
+              <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Body (Preview Placeholder) -->
+        <div class="flex-grow overflow-y-auto p-8 bg-gray-950/50">
+          <div class="max-w-3xl mx-auto bg-white text-gray-900 p-12 shadow-inner rounded-sm min-h-screen">
+            <!-- Simulated Resume Content for Readability -->
+            <div class="space-y-8">
+              <div class="border-b-2 border-gray-900 pb-6 text-center">
+                <h1 class="text-4xl font-bold uppercase tracking-tight">Salla Abhitej</h1>
+                <p class="mt-2 text-gray-600">Code Developer | AI Enthusiast | IT Student</p>
+                <div class="flex justify-center gap-4 mt-4 text-sm font-medium text-gray-500">
+                  <span>abhitejabhitej19@gmail.com</span>
+                  <span>•</span>
+                  <span>VIGNAN University</span>
+                </div>
+              </div>
+
+              <section>
+                <h2 class="text-xl font-bold text-primary-700 uppercase mb-3 border-b border-gray-200">Education</h2>
+                <div class="flex justify-between">
+                  <p class="font-bold">B.Tech in Information Technology</p>
+                  <p class="text-gray-500">Present</p>
+                </div>
+                <p class="text-gray-700 italic">VIGNAN University</p>
+              </section>
+
+              <section>
+                <h2 class="text-xl font-bold text-primary-700 uppercase mb-3 border-b border-gray-200">Projects</h2>
+                <div class="space-y-4">
+                  <div>
+                    <p class="font-bold">Detection of Eyesight Through Pupil</p>
+                    <p class="text-gray-700 text-sm">AI-powered mobile app using OpenCV and Python to detect eyesight
+                      metrics through camera-based pupil tracking.</p>
+                  </div>
+                  <div>
+                    <p class="font-bold">Helmet Wearing Detection</p>
+                    <p class="text-gray-700 text-sm">IoT safety system utilizing Raspberry Pi, Arduino, and Gyroscope
+                      sensors for real-time monitoring.</p>
+                  </div>
+                  <div>
+                    <p class="font-bold">Intelligence Quiz Application</p>
+                    <p class="text-gray-700 text-sm">Interactive educational tool developed in C for learning
+                      evaluation.</p>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h2 class="text-xl font-bold text-primary-700 uppercase mb-3 border-b border-gray-200">Core Skills</h2>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>Java, Python, C Programming</li>
+                    <li>MySQL & JDBC</li>
+                    <li>Web Dev (HTML, CSS, JS)</li>
+                  </ul>
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>Machine Learning (AI Fundamentals)</li>
+                    <li>Git & Version Control</li>
+                    <li>Problem Solving & Logic</li>
+                  </ul>
+                </div>
+              </section>
+
+              <div
+                class="p-6 bg-primary-50 rounded-xl border border-primary-100 flex items-center justify-between mt-12">
+                <p class="text-sm font-medium text-primary-800">For the full official formatting, please download the
+                  original .docx file.</p>
+                <a href="S_Abhitej_Resume.docx" download
+                  class="px-4 py-2 bg-primary-600 text-white rounded-lg text-sm font-bold shadow-sm">Get .docx</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certificate Modal -->
+  <div id="cert-modal" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/90 backdrop-blur-md" id="cert-backdrop"></div>
+    <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+      <div
+        class="bg-gray-900 w-full max-w-4xl rounded-[40px] border border-white/10 shadow-2xl flex flex-col pointer-events-auto overflow-hidden animate-scale-in">
+        <!-- Header -->
+        <div class="p-8 border-b border-white/5 flex justify-between items-center bg-gray-900/50">
+          <div>
+            <h3 id="cert-modal-title" class="text-2xl font-bold font-heading">Certificate Title</h3>
+            <p id="cert-modal-org" class="text-primary-400 font-medium mt-1 uppercase tracking-widest text-xs">
+              Organization
+            </p>
+          </div>
+          <button id="close-cert"
+            class="p-3 hover:bg-white/5 rounded-2xl text-gray-400 hover:text-white transition-all">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <!-- Body -->
+        <div class="p-10 overflow-y-auto max-h-[70vh]">
+          <div class="aspect-[1.4/1] w-full bg-white rounded-2xl shadow-2xl mb-10 overflow-hidden relative group">
+            <!-- Actual Certificate Image -->
+            <img id="cert-modal-image" src="" alt="Certificate"
+              class="absolute inset-0 w-full h-full object-contain hidden"
+              onerror="this.classList.add('hidden'); document.getElementById('cert-modal-simulated').classList.remove('hidden');">
+
+            <!-- Simulated Certificate Graphic (Fallback) -->
+            <div id="cert-modal-simulated"
+              class="absolute inset-0 p-12 border-[16px] border-primary-100 flex flex-col items-center justify-center text-center text-gray-900">
+              <div class="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-primary-600"></div>
+              <div class="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-primary-600"></div>
+
+              <i data-lucide="award" class="w-16 h-16 text-primary-600 mb-6"></i>
+              <h4 class="text-sm uppercase tracking-[0.3em] font-bold text-gray-400 mb-2">Certificate of Achievement
+              </h4>
+              <h2 id="cert-preview-title" class="text-3xl font-bold font-heading mb-8">Certificate Title</h2>
+              <p class="text-gray-500 mb-2">This is to certify that</p>
+              <h3 class="text-2xl font-bold text-gray-900 mb-8 border-b-2 border-primary-500 px-4">S. Abhitej</h3>
+              <p id="cert-preview-desc" class="text-gray-600 max-w-lg leading-relaxed mb-10 italic">Description of the
+                certificate and achievement details.</p>
+
+              <div class="flex justify-center items-center gap-12 w-full mt-auto">
+                <div class="text-center">
+                  <div class="w-32 h-px bg-gray-300 mb-2"></div>
+                  <p class="text-[10px] uppercase font-bold text-gray-400">Date Issued</p>
+                </div>
+                <div class="w-16 h-16 rounded-full border-4 border-primary-100 flex items-center justify-center">
+                  <i data-lucide="verified" class="text-primary-500 w-8 h-8"></i>
+                </div>
+                <div class="text-center">
+                  <div class="w-32 h-px bg-gray-300 mb-2"></div>
+                  <p class="text-[10px] uppercase font-bold text-gray-400">Authorized Signature</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <script>
+    // Custom Cursor Logic
+    const cursor = document.getElementById('cursor');
+    const follower = document.getElementById('cursor-follower');
+    const links = document.querySelectorAll('a, button, .cert-view-btn');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+
+      follower.style.left = (e.clientX - 16) + 'px';
+      follower.style.top = (e.clientY - 16) + 'px';
+    });
+
+    links.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        document.body.classList.add('cursor-active');
+      });
+      link.addEventListener('mouseleave', () => {
+        document.body.classList.remove('cursor-active');
+      });
+    });
+
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Modal Elements
+    const resumeModal = document.getElementById('resume-modal');
+    const viewResumeBtn = document.getElementById('view-resume-btn');
+    const closeResumeBtn = document.getElementById('close-resume');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+
+    // Toggle Modal
+    function openModal() {
+      resumeModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // Prevent scroll
+    }
+
+    function closeModal() {
+      resumeModal.classList.add('hidden');
+      document.body.style.overflow = ''; // Restore scroll
+    }
+
+    viewResumeBtn.addEventListener('click', openModal);
+    closeResumeBtn.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+
+    // Escape key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !resumeModal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    // Certificate Modal Elements
+    const certModal = document.getElementById('cert-modal');
+    const certBackdrop = document.getElementById('cert-backdrop');
+    const closeCertBtn = document.getElementById('close-cert');
+    const certTitle = document.getElementById('cert-modal-title');
+    const certOrg = document.getElementById('cert-modal-org');
+    const certDesc = document.getElementById('cert-preview-desc');
+    const certPreviewTitle = document.getElementById('cert-preview-title');
+    const certModalImage = document.getElementById('cert-modal-image');
+    const certSimulated = document.getElementById('cert-modal-simulated');
+    const certViewBtns = document.querySelectorAll('.cert-view-btn');
+
+    certViewBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = btn.getAttribute('data-title');
+        const org = btn.getAttribute('data-org');
+        const desc = btn.getAttribute('data-desc');
+        const imgPath = btn.getAttribute('data-image');
+
+        certTitle.textContent = title;
+        certOrg.textContent = org;
+        certDesc.textContent = desc;
+        certPreviewTitle.textContent = title;
+
+        if (imgPath) {
+          certModalImage.src = imgPath;
+          certModalImage.classList.remove('hidden');
+          certSimulated.classList.add('hidden');
+        } else {
+          certModalImage.classList.add('hidden');
+          certSimulated.classList.remove('hidden');
+        }
+
+        certModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        lucide.createIcons(); // Refresh icons for the newly shown modal
+      });
+    });
+
+    certBackdrop.addEventListener('click', () => {
+      certModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+
+    closeCertBtn.addEventListener('click', () => {
+      certModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Smooth reveal on scroll (simple implementation)
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100');
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+      observer.observe(section);
+    });
+  </script>
+</body>
+
+</html>
