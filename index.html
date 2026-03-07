@@ -168,57 +168,6 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #374151;
     }
-
-    /* Custom Cursor Styles */
-    #cursor {
-      width: 8px;
-      height: 8px;
-      background: #3752f9;
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 100;
-      transition: transform 0.1s;
-    }
-
-    #cursor-follower {
-      width: 40px;
-      height: 40px;
-      border: 2px solid rgba(55, 82, 249, 0.3);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 99;
-      transition: all 0.15s ease-out;
-    }
-
-    .cursor-active #cursor-follower {
-      transform: scale(1.5);
-      background: rgba(55, 82, 249, 0.1);
-      border-color: rgba(55, 82, 249, 0.6);
-    }
-
-    @media (max-width: 768px) {
-
-      #cursor,
-      #cursor-follower {
-        display: none;
-      }
-
-      body {
-        cursor: auto !important;
-      }
-    }
-
-    body {
-      cursor: none;
-    }
-
-    a,
-    button,
-    .cert-view-btn {
-      cursor: none;
-    }
   </style>
 </head>
 
@@ -227,7 +176,7 @@
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 z-50 glass-nav">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold font-heading gradient-text tracking-tighter">SA.</a>
+      <a href="#" class="text-2xl font-bold font-heading gradient-text tracking-tighter">Salla Abhitej</a>
 
       <!-- Desktop Nav -->
       <div class="hidden md:flex gap-8 text-sm font-medium">
@@ -424,39 +373,158 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- AI & Data Fest -->
+        <!-- AI Fundamentals -->
         <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
           <div class="mb-6">
-            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Microsoft</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">AI & Data Fest 2025</h3>
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Certification</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">AI Fundamentals</h3>
           </div>
-          <p class="text-gray-400 mb-6 flex-grow text-sm">Appreciation for successful participation in AI & Data Fest
-            2025 held at Microsoft Campus, Hyderabad.</p>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Successfully completed the Artificial Intelligence
+            Fundamentals certification.</p>
           <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
-            <span class="text-xs text-gray-500 font-medium">May 2025</span>
+            <span class="text-xs text-gray-500 font-medium">Verified</span>
             <button
               class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
-              data-title="AI & Data Fest 2025" data-org="Microsoft" data-image="resume/microsoft_fest.jpg"
-              data-desc="This is to certify that S. Abhitej actively participated in the AI & Data Fest 2025 held at Microsoft Campus Building 1, Gachibowli, Hyderabad. The event focused on the latest innovations in Artificial Intelligence and Data Science.">
+              data-title="AI Fundamentals" data-org="Certification"
+              data-image="images/projects/23891A1201_Abhitej_Artificial Intelligence Fundamentals.pdf"
+              data-desc="Certification in Artificial Intelligence Fundamentals.">
               View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
             </button>
           </div>
         </div>
 
-        <!-- HackWithHyderabad -->
+        <!-- Communication Dynamics -->
         <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
           <div class="mb-6">
-            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">HackWithIndia</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">HackWithHyderabad</h3>
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Certification</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Communication Dynamics</h3>
           </div>
-          <p class="text-gray-400 mb-6 flex-grow text-sm">Certificate of participation in the hackathon held at
-            Microsoft Hyderabad, focusing on innovation and collaboration.</p>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Completed certification in Communication and Personality
+            Dynamics.</p>
           <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
-            <span class="text-xs text-gray-500 font-medium">Nov 2024</span>
+            <span class="text-xs text-gray-500 font-medium">Verified</span>
             <button
               class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
-              data-title="HackWithHyderabad" data-org="HackWithIndia" data-image="resume/hackathon.jpg"
-              data-desc="Certified participation in the HackWithHyderabad Hackathon held at Microsoft Office, Hyderabad. Recognized for curiosity, collaboration, and the true spirit of innovation during the event.">
+              data-title="Communication Dynamics" data-org="Certification"
+              data-image="images/projects/23891A1201_Abhitej_Communication and Personality Dynamics.pdf"
+              data-desc="Certification in Communication and Personality Dynamics.">
+              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Problem Solving -->
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Certification</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Problem Solving</h3>
+          </div>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Successfully completed certification in Problem Solving and
+            Process Controls.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+            <span class="text-xs text-gray-500 font-medium">Verified</span>
+            <button
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              data-title="Problem Solving" data-org="Certification"
+              data-image="images/projects/23891A1201_Abhitej_Problem Solving and Process Controls.pdf"
+              data-desc="Certification in Problem Solving and Process Controls.">
+              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- IBM AI -->
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">IBM</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Artificial Intelligence</h3>
+          </div>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Recognized achievement in Artificial Intelligence concepts and
+            tools by IBM.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+            <span class="text-xs text-gray-500 font-medium">Professional</span>
+            <button
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              data-title="IBM Artificial Intelligence" data-org="IBM" data-image="images/projects/IBM-AI.pdf"
+              data-desc="Certification of completion for IBM Artificial Intelligence.">
+              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cisco Data Science -->
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Cisco</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Data Science</h3>
+          </div>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Completed foundational learning in Data Science concepts and
+            analytics.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+            <span class="text-xs text-gray-500 font-medium">Verified</span>
+            <button
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              data-title="Data Science" data-org="Cisco" data-image="images/projects/data science cisco.pdf"
+              data-desc="Certification of completion for Data Science fundamentals by Cisco.">
+              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- NPTEL Python -->
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">NPTEL</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Programming in Python</h3>
+          </div>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Advanced achievement covering data structures and
+            problem-solving in Python.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+            <span class="text-xs text-gray-500 font-medium">Advanced</span>
+            <button
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              data-title="Programming in Python" data-org="NPTEL" data-image="images/projects/NPTEL python.pdf"
+              data-desc="Certification for successful completion of the Joy of Computing using Python course by NPTEL.">
+              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Infosys Python -->
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Infosys
+              Springboard</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Python Basics</h3>
+          </div>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Completed rigorous fundamental training in Python programming.
+          </p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+            <span class="text-xs text-gray-500 font-medium">Verified</span>
+            <button
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              data-title="Infosys Python Basics" data-org="Infosys"
+              data-image="images/projects/Infosys python basics certificate.pdf"
+              data-desc="Successfully completed the Python Basics training program from Infosys Springboard.">
+              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Devnovate -->
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Hackathon</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Devnovate</h3>
+          </div>
+          <p class="text-gray-400 mb-6 flex-grow text-sm">Demonstrated strong technical skills and teamwork during the
+            Devnovate Hackathon.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+            <span class="text-xs text-gray-500 font-medium">Participant</span>
+            <button
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              data-title="Devnovate Hackathon" data-org="Hackathon" data-image="images/projects/Devnovate.jpg"
+              data-desc="Certificate of participation for Devnovate Hackathon.">
               View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
             </button>
           </div>
@@ -474,65 +542,8 @@
             <span class="text-xs text-gray-500 font-medium">Oct 2024</span>
             <button
               class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
-              data-title="Frontend with HTML5 & CSS3" data-org="TASK" data-image="resume/frontend_task.jpg"
-              data-desc="Successfully completed a three-day intensive training on Frontend Development using HTML5 and CSS3, conducted by Telangana Academy for Skill and Knowledge (TASK) in October 2024.">
-              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- NxtWave GenAI -->
-        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
-          <div class="mb-6">
-            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">NxtWave</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Generative AI Tools</h3>
-          </div>
-          <p class="text-gray-400 mb-6 flex-grow text-sm">Participated in a workshop on gaining career advantages
-            through Generative AI tools and LLMs.</p>
-          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
-            <span class="text-xs text-gray-500 font-medium">Oct 2024</span>
-            <button
-              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
-              data-title="Career Advantage with GenAI" data-org="NxtWave" data-image="resume/genai_nxtwave.jpg"
-              data-desc="Participated in the workshop 'How to gain career advantage with Generative AI tools' conducted at Vignan Institute of Technology & Science. The workshop covered essential skills for the AI era.">
-              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Python HackerRank -->
-        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
-          <div class="mb-6">
-            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">HackerRank</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Python Programming</h3>
-          </div>
-          <p class="text-gray-400 mb-6 flex-grow text-sm">Demonstrated expertise in functions, loops, and complex data
-            structures through rigorous testing.</p>
-          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
-            <span class="text-xs text-gray-500 font-medium">Skills Verified</span>
-            <button
-              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
-              data-title="Python (Basic) Certificate" data-org="HackerRank"
-              data-desc="Earned the Python (Basic) certification from HackerRank by demonstrating proficiency in various Python concepts including data structures, loops, and functional programming.">
-              View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Google GenAI -->
-        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
-          <div class="mb-6">
-            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Google Cloud</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">GenAI Fundamentals</h3>
-          </div>
-          <p class="text-gray-400 mb-6 flex-grow text-sm">Covered LLMs, prompt engineering, diffusion models, and ethics
-            of AI applications.</p>
-          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
-            <span class="text-xs text-gray-500 font-medium">Professional</span>
-            <button
-              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
-              data-title="Generative AI Fundamentals" data-org="Google Cloud"
-              data-desc="Completed the Generative AI Fundamentals series, covering foundational concepts of large language models, image generation, and the ethical considerations of AI development.">
+              data-title="Frontend with HTML5 & CSS3" data-org="TASK" data-image="images/projects/TASK CERTIFICATE .jpg"
+              data-desc="Successfully completed an intensive training on Frontend Development using HTML5 and CSS3, conducted by Telangana Academy for Skill and Knowledge (TASK) in October 2024.">
               View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
             </button>
           </div>
@@ -601,7 +612,7 @@
         <!-- Tools -->
         <div class="space-y-6">
           <h3 class="text-xl font-bold flex items-center gap-3">
-            <i data-lucide="tool" class="text-emerald-500"></i> Tools
+            <i data-lucide="wrench" class="text-emerald-500"></i> Tools
           </h3>
           <div class="flex flex-wrap gap-3">
             <span
@@ -801,6 +812,10 @@
               class="absolute inset-0 w-full h-full object-contain hidden"
               onerror="this.classList.add('hidden'); document.getElementById('cert-modal-simulated').classList.remove('hidden');">
 
+            <!-- Actual Certificate PDF -->
+            <iframe id="cert-modal-pdf" src=""
+              class="absolute inset-0 w-full h-full hidden border-none z-10 bg-white"></iframe>
+
             <!-- Simulated Certificate Graphic (Fallback) -->
             <div id="cert-modal-simulated"
               class="absolute inset-0 p-12 border-[16px] border-primary-100 flex flex-col items-center justify-center text-center text-gray-900">
@@ -838,32 +853,7 @@
     </div>
   </div>
 
-  <div id="cursor"></div>
-  <div id="cursor-follower"></div>
-
   <script>
-    // Custom Cursor Logic
-    const cursor = document.getElementById('cursor');
-    const follower = document.getElementById('cursor-follower');
-    const links = document.querySelectorAll('a, button, .cert-view-btn');
-
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-
-      follower.style.left = (e.clientX - 16) + 'px';
-      follower.style.top = (e.clientY - 16) + 'px';
-    });
-
-    links.forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        document.body.classList.add('cursor-active');
-      });
-      link.addEventListener('mouseleave', () => {
-        document.body.classList.remove('cursor-active');
-      });
-    });
-
     // Initialize Lucide icons
     lucide.createIcons();
 
@@ -919,12 +909,23 @@
         certDesc.textContent = desc;
         certPreviewTitle.textContent = title;
 
+        const certModalPdf = document.getElementById('cert-modal-pdf');
+
         if (imgPath) {
-          certModalImage.src = imgPath;
-          certModalImage.classList.remove('hidden');
-          certSimulated.classList.add('hidden');
+          if (imgPath.toLowerCase().endsWith('.pdf')) {
+            certModalPdf.src = imgPath;
+            certModalPdf.classList.remove('hidden');
+            certModalImage.classList.add('hidden');
+            certSimulated.classList.add('hidden');
+          } else {
+            certModalImage.src = imgPath;
+            certModalImage.classList.remove('hidden');
+            if (certModalPdf) certModalPdf.classList.add('hidden');
+            certSimulated.classList.add('hidden');
+          }
         } else {
           certModalImage.classList.add('hidden');
+          if (certModalPdf) certModalPdf.classList.add('hidden');
           certSimulated.classList.remove('hidden');
         }
 
