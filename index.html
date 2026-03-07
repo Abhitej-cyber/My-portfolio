@@ -110,6 +110,28 @@
       box-shadow: 0 10px 30px -10px rgba(55, 82, 249, 0.3);
     }
 
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 50%;
+      background: #60a5fa;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
     .gradient-text {
       background: linear-gradient(to right, #60a5fa, #a78bfa, #f472b6);
       -webkit-background-clip: text;
@@ -219,11 +241,11 @@
 
       <!-- Desktop Nav -->
       <div class="hidden md:flex gap-8 text-sm font-medium">
-        <a href="#about" class="hover:text-primary-400 transition-colors">About</a>
-        <a href="#projects" class="hover:text-primary-400 transition-colors">Projects</a>
-        <a href="#certification" class="hover:text-primary-400 transition-colors">Certificates</a>
-        <a href="#skills" class="hover:text-primary-400 transition-colors">Skills</a>
-        <a href="#contact" class="hover:text-primary-400 transition-colors">Contact</a>
+        <a href="#about" class="nav-link hover:text-primary-400">About</a>
+        <a href="#projects" class="nav-link hover:text-primary-400">Projects</a>
+        <a href="#certification" class="nav-link hover:text-primary-400">Certificates</a>
+        <a href="#skills" class="nav-link hover:text-primary-400">Skills</a>
+        <a href="#contact" class="nav-link hover:text-primary-400">Contact</a>
       </div>
 
       <button class="md:hidden text-white" id="menu-btn">
@@ -648,7 +670,7 @@
   <!-- Footer -->
   <footer class="py-12 border-t border-white/5 text-center text-gray-500 text-sm">
     <div class="max-w-7xl mx-auto px-6">
-      <p>&copy; 2024 Salla Abhitej. Built with passion and code. All rights reserved.</p>
+      <p>&copy; 2026 Salla Abhitej</p>
     </div>
   </footer>
 
@@ -802,7 +824,7 @@
               </h4>
               <h2 id="cert-preview-title" class="text-3xl font-bold font-heading mb-8">Certificate Title</h2>
               <p class="text-gray-500 mb-2">This is to certify that</p>
-              <h3 class="text-2xl font-bold text-gray-900 mb-8 border-b-2 border-primary-500 px-4">S. Abhitej</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-8 border-b-2 border-primary-500 px-4">Salla Abhitej</h3>
               <p id="cert-preview-desc" class="text-gray-600 max-w-lg leading-relaxed mb-10 italic">Description of the
                 certificate and achievement details.</p>
 
