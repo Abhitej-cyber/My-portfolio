@@ -25,6 +25,7 @@
   <meta property="twitter:description"
     content="Innovation in AI and elegant code developments. Explore my projects and certificates.">
   <meta property="twitter:image" content="images/profile.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +39,16 @@
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "W88oFwOr32uK5yo-U",
+      });
+    })();
+  </script>
 
   <!-- Custom Tailwind Config -->
   <script>
@@ -108,6 +119,19 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
       transform: translateY(-5px);
       box-shadow: 0 10px 30px -10px rgba(55, 82, 249, 0.3);
+    }
+
+    .form-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #3752f9;
+      outline: none;
+      box-shadow: 0 0 15px -5px rgba(55, 82, 249, 0.5);
     }
 
     .nav-link {
@@ -210,10 +234,77 @@
     .animation-delay-4000 {
       animation-delay: 4s;
     }
+
+    /* Scroll Progress Bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(to right, #3752f9, #a78bfa, #f472b6);
+      z-index: 100;
+      transition: width 0.1s ease-out;
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 50;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #back-to-top.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Skills Floating Animation */
+    @keyframes floating {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .skill-tag-float {
+      animation: floating 3s ease-in-out infinite;
+    }
+
+    .skill-card:hover .skill-icon {
+      transform: scale(1.1) rotate(5deg);
+      filter: drop-shadow(0 0 15px currentColor);
+    }
+
+    /* Card Tilt Utility */
+    .tilt-card {
+      transition: transform 0.1s ease-out;
+      transform-style: preserve-3d;
+    }
   </style>
 </head>
 
 <body class="selection:bg-primary-500 selection:text-white">
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top"
+    class="p-4 bg-primary-600 hover:bg-primary-700 text-white rounded-2xl shadow-2xl transition-all group">
+    <i data-lucide="arrow-up" class="w-6 h-6 group-hover:-translate-y-1 transition-transform"></i>
+  </button>
 
   <!-- Dynamic Fluid Background -->
   <div class="fixed inset-0 w-full h-full z-[-1] overflow-hidden bg-[#030712]">
@@ -338,7 +429,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Project 1 -->
-        <div class="glass-card group overflow-hidden rounded-3xl flex flex-col h-full">
+        <div class="glass-card tilt-card group overflow-hidden rounded-3xl flex flex-col h-full">
           <div class="relative aspect-video overflow-hidden">
             <img src="images/projects/eyesight.png" alt="Eyesight Detection"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
@@ -364,7 +455,7 @@
         </div>
 
         <!-- Project 2 -->
-        <div class="glass-card group overflow-hidden rounded-3xl flex flex-col h-full">
+        <div class="glass-card tilt-card group overflow-hidden rounded-3xl flex flex-col h-full">
           <div class="relative aspect-video overflow-hidden">
             <img src="images/projects/helmet.png" alt="Helmet Detection"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
@@ -556,70 +647,83 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Langs -->
-        <div class="space-y-6">
-          <h3 class="text-xl font-bold flex items-center gap-3">
-            <i data-lucide="code-2" class="text-primary-500"></i> Languages
+        <div class="space-y-6 skill-card">
+          <h3 class="text-xl font-bold flex items-center gap-3 transition-colors">
+            <i data-lucide="code-2" class="text-primary-500 skill-icon transition-all"></i> Languages
           </h3>
           <div class="flex flex-wrap gap-3">
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all">Java</span>
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.1s">Java</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all">Python</span>
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.3s">Python</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all">C
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.5s">C
               Programming</span>
           </div>
         </div>
 
         <!-- Web -->
-        <div class="space-y-6">
-          <h3 class="text-xl font-bold flex items-center gap-3">
-            <i data-lucide="globe" class="text-purple-500"></i> Web Stack
+        <div class="space-y-6 skill-card">
+          <h3 class="text-xl font-bold flex items-center gap-3 transition-colors">
+            <i data-lucide="globe" class="text-purple-500 skill-icon transition-all"></i> Web Stack
           </h3>
           <div class="flex flex-wrap gap-3">
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all">HTML5</span>
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.2s">HTML5</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all">CSS3</span>
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.4s">CSS3</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all">JavaScript</span>
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.6s">JavaScript</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all">Tailwind
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.8s">Tailwind
               CSS</span>
           </div>
         </div>
 
         <!-- Database -->
-        <div class="space-y-6">
-          <h3 class="text-xl font-bold flex items-center gap-3">
-            <i data-lucide="database" class="text-pink-500"></i> Data & Core
+        <div class="space-y-6 skill-card">
+          <h3 class="text-xl font-bold flex items-center gap-3 transition-colors">
+            <i data-lucide="database" class="text-pink-500 skill-icon transition-all"></i> Data & Core
           </h3>
           <div class="flex flex-wrap gap-3">
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all">MySQL</span>
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.3s">MySQL</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all">JDBC</span>
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.5s">JDBC</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all">OOPs</span>
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.7s">OOPs</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all">OS</span>
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.9s">OS</span>
           </div>
         </div>
 
         <!-- Tools -->
-        <div class="space-y-6">
-          <h3 class="text-xl font-bold flex items-center gap-3">
-            <i data-lucide="wrench" class="text-emerald-500"></i> Tools
+        <div class="space-y-6 skill-card">
+          <h3 class="text-xl font-bold flex items-center gap-3 transition-colors">
+            <i data-lucide="wrench" class="text-emerald-500 skill-icon transition-all"></i> Tools
           </h3>
           <div class="flex flex-wrap gap-3">
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all">Git
-              / GitHub</span>
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.4s">Git</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all">VS
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.6s">VS
               Code</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all">Eclipse</span>
+              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all skill-tag-float"
+              style="animation-delay: 0.8s">Eclipse</span>
           </div>
         </div>
       </div>
@@ -632,36 +736,90 @@
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-600/10 rounded-full blur-[100px]">
     </div>
 
-    <div class="max-w-4xl mx-auto px-6 relative z-10">
-      <div class="glass-card p-12 rounded-[40px] text-center">
-        <h2 class="text-4xl font-bold font-heading mb-6 tracking-tight">Let's Connect</h2>
-        <p class="text-xl text-gray-400 mb-12">I'm always open to discussing new projects, creative ideas or
-          opportunities to be part of your visions.</p>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="flex flex-col lg:flex-row gap-12">
+        <!-- Contact Info -->
+        <div class="lg:w-1/3 flex flex-col justify-center">
+          <h2 class="text-5xl font-bold font-heading mb-6 tracking-tight">Let's <span
+              class="gradient-text">Connect</span></h2>
+          <p class="text-xl text-gray-400 mb-12">I'm always open to discussing new projects, internships, or technical
+            collaborations. Drop me a message!</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <a href="mailto:abhitejabhitej19@gmail.com"
-            class="p-6 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-all flex flex-col items-center gap-4">
-            <div class="w-12 h-12 bg-primary-600/20 rounded-2xl flex items-center justify-center text-primary-400">
-              <i data-lucide="mail"></i>
-            </div>
-            <span class="font-medium text-sm truncate w-full">abhitejabhitej19@gmail.com</span>
-          </a>
+          <div class="space-y-4">
+            <a href="mailto:abhitejabhitej19@gmail.com"
+              class="flex items-center gap-4 p-4 glass-card rounded-2xl group">
+              <div
+                class="w-12 h-12 bg-primary-600/20 rounded-xl flex items-center justify-center text-primary-400 group-hover:bg-primary-600 group-hover:text-white transition-all">
+                <i data-lucide="mail"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 uppercase font-bold tracking-wider">Email Me</p>
+                <p class="font-medium text-sm">abhitejabhitej19@gmail.com</p>
+              </div>
+            </a>
 
-          <a href="https://www.linkedin.com/in/abhitej-salla-aa9911373/" target="_blank"
-            class="p-6 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-all flex flex-col items-center gap-4">
-            <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center text-blue-400">
-              <i data-lucide="linkedin"></i>
-            </div>
-            <span class="font-medium">Abhitej Salla</span>
-          </a>
+            <a href="https://www.linkedin.com/in/abhitej-salla-aa9911373/" target="_blank"
+              class="flex items-center gap-4 p-4 glass-card rounded-2xl group">
+              <div
+                class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                <i data-lucide="linkedin"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 uppercase font-bold tracking-wider">LinkedIn</p>
+                <p class="font-medium">Abhitej Salla</p>
+              </div>
+            </a>
 
-          <a href="https://github.com/Abhitej-cyber" target="_blank"
-            class="p-6 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-all flex flex-col items-center gap-4">
-            <div class="w-12 h-12 bg-gray-600/20 rounded-2xl flex items-center justify-center text-gray-400">
-              <i data-lucide="github"></i>
-            </div>
-            <span class="font-medium">Abhitej-cyber</span>
-          </a>
+            <a href="https://github.com/Abhitej-cyber" target="_blank"
+              class="flex items-center gap-4 p-4 glass-card rounded-2xl group">
+              <div
+                class="w-12 h-12 bg-gray-600/20 rounded-xl flex items-center justify-center text-gray-400 group-hover:bg-gray-800 group-hover:text-white transition-all">
+                <i data-lucide="github"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 uppercase font-bold tracking-wider">GitHub</p>
+                <p class="font-medium">Abhitej-cyber</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:w-2/3">
+          <div class="glass-card p-8 md:p-12 rounded-[40px]">
+            <form id="contact-form" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-sm font-semibold text-gray-400 ml-1">Full Name</label>
+                  <input type="text" name="name" required class="w-full px-6 py-4 rounded-2xl form-input text-white"
+                    placeholder="John Doe">
+                </div>
+                <div class="space-y-2">
+                  <label class="text-sm font-semibold text-gray-400 ml-1">Email Address</label>
+                  <input type="email" name="email" required class="w-full px-6 py-4 rounded-2xl form-input text-white"
+                    placeholder="john@example.com">
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-semibold text-gray-400 ml-1">Subject</label>
+                <input type="text" name="subject" required class="w-full px-6 py-4 rounded-2xl form-input text-white"
+                  placeholder="Project Inquiry">
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-semibold text-gray-400 ml-1">Message</label>
+                <textarea name="message" rows="5" required
+                  class="w-full px-6 py-4 rounded-2xl form-input text-white resize-none"
+                  placeholder="Tell me about your project..."></textarea>
+              </div>
+              <button type="submit"
+                class="w-full py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-2xl font-bold transition-all shadow-lg shadow-primary-500/25 flex items-center justify-center gap-2 group">
+                Send Message
+                <i data-lucide="send"
+                  class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+              </button>
+            </form>
+            <div id="form-status" class="hidden mt-6 p-4 rounded-2xl text-center font-medium"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -989,6 +1147,103 @@
       section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
       observer.observe(section);
     });
+
+    // Scroll Progress & Back to Top Toggle
+    const scrollProgress = document.getElementById('scroll-progress');
+    const backToTop = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      scrollProgress.style.width = scrolled + "%";
+
+      if (winScroll > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Tilt Effect for Project Cards
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      });
+    });
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+
+        // Loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Sending...';
+        lucide.createIcons();
+
+        try {
+          console.log("Submitting form...");
+
+          if (typeof emailjs === 'undefined') {
+            throw new Error("EmailJS library not loaded. Please check your internet connection.");
+          }
+
+          const result = await emailjs.sendForm(
+            'service_9zyw9k1',
+            'template_0zmv6en',
+            e.target
+          );
+
+          console.log("SUCCESS!", result.status, result.text);
+
+          if (result.status === 200 || result.text === 'OK') {
+            formStatus.innerHTML = '<div class="flex flex-col items-center gap-3"><i data-lucide="check-circle" class="w-10 h-10 text-emerald-400"></i><p>Thanks! Your message has been sent successfully. ✨</p></div>';
+            formStatus.classList.remove('hidden', 'bg-red-500/10', 'text-red-400');
+            formStatus.classList.add('bg-emerald-500/10', 'text-emerald-400');
+            contactForm.reset();
+            contactForm.style.display = 'none';
+          } else {
+            throw new Error("Submission failed with status: " + result.status);
+          }
+        } catch (error) {
+          console.error("FAILED...", error);
+          const errorMsg = error.text || error.message || JSON.stringify(error);
+          formStatus.innerHTML = `<div class="flex flex-col items-center gap-2"><i data-lucide="alert-circle" class="w-8 h-8 text-red-400"></i><p>Error: ${errorMsg}</p></div>`;
+          formStatus.classList.remove('hidden', 'bg-emerald-500/10', 'text-emerald-400');
+          formStatus.classList.add('bg-red-500/10', 'text-red-400');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+          lucide.createIcons();
+        }
+      });
+    }
   </script>
 </body>
 
