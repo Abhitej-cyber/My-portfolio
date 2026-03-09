@@ -57,16 +57,16 @@
         extend: {
           colors: {
             primary: {
-              50: '#f0f4ff',
-              100: '#dce4ff',
-              200: '#bfcdff',
-              300: '#91abff',
-              400: '#5c7bff',
-              500: '#3752f9',
-              600: '#2336ec',
-              700: '#1a27d8',
-              800: '#1b23ae',
-              900: '#1c248b',
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
             }
           },
           fontFamily: {
@@ -90,8 +90,8 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #030712;
-      color: #f3f4f6;
+      background-color: #050505;
+      color: #f8fafc;
     }
 
     h1,
@@ -102,36 +102,37 @@
     }
 
     .glass-nav {
-      background: rgba(3, 7, 18, 0.7);
+      background: rgba(5, 5, 5, 0.8);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .glass-card {
-      background: rgba(31, 41, 55, 0.4);
+      background: rgba(15, 15, 15, 0.4);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.03);
       transition: all 0.3s ease;
     }
 
     .glass-card:hover {
-      background: rgba(31, 41, 55, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(20, 20, 20, 0.6);
+      border: 1px solid rgba(139, 92, 246, 0.3);
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px -10px rgba(55, 82, 249, 0.3);
+      box-shadow: 0 20px 40px -20px rgba(139, 92, 246, 0.3);
     }
 
     .form-input {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       transition: all 0.3s ease;
+      color: #ffffff !important;
     }
 
     .form-input:focus {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: #3752f9;
+      background: rgba(255, 255, 255, 0.05);
+      border-color: #8b5cf6;
       outline: none;
-      box-shadow: 0 0 15px -5px rgba(55, 82, 249, 0.5);
+      box-shadow: 0 0 15px -5px rgba(139, 92, 246, 0.4);
     }
 
     .nav-link {
@@ -186,22 +187,22 @@
       }
     }
 
-    /* Hide scrollbar */
+    /* Custom scrollbar for Midnight theme */
     ::-webkit-scrollbar {
       width: 8px;
     }
 
     ::-webkit-scrollbar-track {
-      background: #030712;
+      background: #0a0a0a;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #1f2937;
+      background: #1f1f1f;
       border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #374151;
+      background: #2d2d2d;
     }
 
     /* Fluid background blobs */
@@ -307,21 +308,21 @@
   </button>
 
   <!-- Dynamic Fluid Background -->
-  <div class="fixed inset-0 w-full h-full z-[-1] overflow-hidden bg-[#030712]">
+  <div class="fixed inset-0 w-full h-full z-[-1] overflow-hidden bg-[#050505]">
     <div
       class="absolute top-0 -left-4 w-96 h-96 bg-primary-600 rounded-full mix-blend-lighten filter blur-[120px] opacity-20 animate-blob">
     </div>
     <div
-      class="absolute top-0 -right-4 w-96 h-96 bg-purple-600 rounded-full mix-blend-lighten filter blur-[120px] opacity-20 animate-blob animation-delay-2000">
+      class="absolute top-0 -right-4 w-96 h-96 bg-purple-700 rounded-full mix-blend-lighten filter blur-[120px] opacity-20 animate-blob animation-delay-2000">
     </div>
     <div
-      class="absolute -bottom-8 left-1/4 w-96 h-96 bg-pink-600 rounded-full mix-blend-lighten filter blur-[120px] opacity-20 animate-blob animation-delay-4000">
+      class="absolute -bottom-8 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-lighten filter blur-[120px] opacity-20 animate-blob animation-delay-4000">
     </div>
     <div
-      class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-lighten filter blur-[120px] opacity-20 animate-blob animation-delay-2000">
+      class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-600 rounded-full mix-blend-lighten filter blur-[120px] opacity-20 animate-blob animation-delay-2000">
     </div>
     <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600 rounded-full mix-blend-lighten filter blur-[150px] opacity-10 animate-blob animation-delay-4000">
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-900 rounded-full mix-blend-lighten filter blur-[150px] opacity-10 animate-blob animation-delay-4000">
     </div>
   </div>
 
@@ -332,26 +333,27 @@
 
       <!-- Desktop Nav -->
       <div class="hidden md:flex gap-8 text-sm font-medium">
-        <a href="#about" class="nav-link hover:text-primary-400">About</a>
-        <a href="#projects" class="nav-link hover:text-primary-400">Projects</a>
-        <a href="#certification" class="nav-link hover:text-primary-400">Certificates</a>
-        <a href="#skills" class="nav-link hover:text-primary-400">Skills</a>
-        <a href="#contact" class="nav-link hover:text-primary-400">Contact</a>
+        <a href="#about" class="nav-link hover:text-primary-600">About</a>
+        <a href="#projects" class="nav-link hover:text-primary-600">Projects</a>
+        <a href="#certification" class="nav-link hover:text-primary-600">Certificates</a>
+        <a href="#skills" class="nav-link hover:text-primary-600">Skills</a>
+        <a href="#contact" class="nav-link hover:text-primary-600">Contact</a>
       </div>
 
-      <button class="md:hidden text-white" id="menu-btn">
+      <button class="md:hidden text-gray-900" id="menu-btn">
         <i data-lucide="menu"></i>
       </button>
     </div>
 
     <!-- Mobile Nav Menu -->
     <div id="mobile-menu"
-      class="hidden md:hidden absolute top-full left-0 right-0 bg-gray-900 border-b border-white/10 p-6 flex flex-col gap-4 text-center">
-      <a href="#about" class="hover:text-primary-400 transition-colors">About</a>
-      <a href="#projects" class="hover:text-primary-400 transition-colors">Projects</a>
-      <a href="#certification" class="hover:text-primary-400 transition-colors">Certificates</a>
-      <a href="#skills" class="hover:text-primary-400 transition-colors">Skills</a>
-      <a href="#contact" class="hover:text-primary-400 transition-colors">Contact</a>
+      class="hidden md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-lg border-b border-white/5 p-6 flex flex-col gap-4 text-center">
+      <a href="#about" class="hover:text-violet-400 transition-colors text-white/80 font-medium">About</a>
+      <a href="#projects" class="hover:text-violet-400 transition-colors text-white/80 font-medium">Projects</a>
+      <a href="#certification"
+        class="hover:text-violet-400 transition-colors text-white/80 font-medium">Certificates</a>
+      <a href="#skills" class="hover:text-violet-400 transition-colors text-white/80 font-medium">Skills</a>
+      <a href="#contact" class="hover:text-violet-400 transition-colors text-white/80 font-medium">Contact</a>
     </div>
   </nav>
 
@@ -359,10 +361,10 @@
   <section class="min-h-screen relative flex items-center justify-center overflow-hidden pt-20">
     <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
       <div
-        class="inline-block px-4 py-1 rounded-full bg-white/5 border border-white/10 text-primary-400 text-sm font-medium mb-6 animate-fade-in">
+        class="inline-block px-4 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm font-medium mb-6 animate-fade-in">
         Ready to Build
       </div>
-      <h1 class="text-5xl md:text-8xl font-bold font-heading mb-6 tracking-tight">
+      <h1 class="text-5xl md:text-8xl font-bold font-heading mb-6 tracking-tight text-white">
         Hi, I'm <span class="gradient-text">Salla Abhitej</span>
       </h1>
       <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
@@ -396,16 +398,17 @@
       </div>
 
       <div class="glass-card p-8 md:p-12 rounded-3xl">
-        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
-          I'm a B.Tech student in Information Technology at <span class="text-white font-semibold">VIGNAN</span>, driven
+        <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-6">
+          I'm a B.Tech student in Information Technology at <span class="text-primary-600 font-semibold">VIGNAN</span>,
+          driven
           by a passion for Artificial Intelligence and real-world applications.
         </p>
-        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+        <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-6">
           My goal is to blend technology with purpose, creating solutions that not only showcase innovation but also
-          make a difference. I strongly believe that <span class="text-primary-400 italic font-medium">"Technology rules
+          make a difference. I strongly believe that <span class="text-primary-600 italic font-medium">"Technology rules
             the future"</span> — and that's the motto I live by.
         </p>
-        <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+        <p class="text-lg md:text-xl text-gray-200 leading-relaxed">
           Whether it's building with code, experimenting with new tech, or collaborating on forward-thinking ideas, I'm
           always eager to learn, build, and contribute to a better tomorrow.
         </p>
@@ -414,15 +417,15 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-32 bg-gray-900/50">
+  <section id="projects" class="py-32 bg-black/40">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex justify-between items-end mb-16">
         <div>
-          <h2 class="text-4xl font-bold font-heading mb-4">Featured Projects</h2>
+          <h2 class="text-4xl font-bold font-heading mb-4 text-white">Featured Projects</h2>
           <p class="text-gray-400">Selected work that highlights my skills and experience.</p>
         </div>
         <a href="https://github.com/Abhitej-cyber" target="_blank"
-          class="hidden md:flex items-center gap-2 text-primary-400 hover:text-primary-300 transition-colors">
+          class="hidden md:flex items-center gap-2 text-primary-600 hover:text-primary-300 transition-colors">
           All Projects <i data-lucide="external-link" class="w-4 h-4"></i>
         </a>
       </div>
@@ -433,22 +436,22 @@
           <div class="relative aspect-video overflow-hidden">
             <img src="images/projects/eyesight.png" alt="Eyesight Detection"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>
             <div
-              class="absolute bottom-4 left-4 w-10 h-10 bg-primary-600/30 backdrop-blur-md rounded-xl flex items-center justify-center text-primary-400">
+              class="absolute bottom-4 left-4 w-10 h-10 bg-primary-600/30 backdrop-blur-md rounded-xl flex items-center justify-center text-primary-600">
               <i data-lucide="eye" class="w-5 h-5"></i>
             </div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold mb-4">Pupil Eyesight Detection</h3>
-            <p class="text-gray-400 mb-8 flex-grow">AI-powered mobile app to detect user's eyesight using just a phone
+            <h3 class="text-2xl font-bold mb-4 text-white">Pupil Eyesight Detection</h3>
+            <p class="text-gray-300 mb-8 flex-grow">AI-powered mobile app to detect user's eyesight using just a phone
               camera with advanced pupil tracking.</p>
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">OpenCV</span>
-              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">Python</span>
-              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">Mobile</span>
+              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">OpenCV</span>
+              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">Python</span>
+              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">Mobile</span>
             </div>
-            <a href="#" class="text-primary-400 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+            <a href="#" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
               View Details <i data-lucide="chevron-right" class="w-4 h-4"></i>
             </a>
           </div>
@@ -459,24 +462,23 @@
           <div class="relative aspect-video overflow-hidden">
             <img src="images/projects/helmet.png" alt="Helmet Detection"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>
             <div
               class="absolute bottom-4 left-4 w-10 h-10 bg-purple-600/30 backdrop-blur-md rounded-xl flex items-center justify-center text-purple-400">
               <i data-lucide="shield-check" class="w-5 h-5"></i>
             </div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold mb-4">Helmet Wearing Detection</h3>
-            <p class="text-gray-400 mb-8 flex-grow">IoT solution using Gyroscope sensors to detect movement and notify
+            <h3 class="text-2xl font-bold mb-4 text-white">Helmet Wearing Detection</h3>
+            <p class="text-gray-300 mb-8 flex-grow">IoT solution using Gyroscope sensors to detect movement and notify
               users with real-time safety alerts.</p>
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">Raspberry
+              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">Raspberry
                 Pi</span>
-              <span
-                class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">Arduino</span>
-              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">Python</span>
+              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">Arduino</span>
+              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">Python</span>
             </div>
-            <a href="#" class="text-primary-400 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+            <a href="#" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
               GitHub Repo <i data-lucide="github" class="w-4 h-4"></i>
             </a>
           </div>
@@ -487,22 +489,22 @@
           <div class="relative aspect-video overflow-hidden">
             <img src="images/projects/quiz.png" alt="Intelligence Quiz"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>
             <div
               class="absolute bottom-4 left-4 w-10 h-10 bg-pink-600/30 backdrop-blur-md rounded-xl flex items-center justify-center text-pink-400">
               <i data-lucide="brain-circuit" class="w-5 h-5"></i>
             </div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold mb-4">Intelligence Quiz Game</h3>
-            <p class="text-gray-400 mb-8 flex-grow">Interactive application designed to evaluate student learning
+            <h3 class="text-2xl font-bold mb-4 text-white">Intelligence Quiz Game</h3>
+            <p class="text-gray-300 mb-8 flex-grow">Interactive application designed to evaluate student learning
               through dynamic questioning logic.</p>
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">C</span>
-              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">Logic
+              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">C</span>
+              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">Logic
                 Design</span>
             </div>
-            <a href="#" class="text-primary-400 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+            <a href="#" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
               Live Demo <i data-lucide="play" class="w-4 h-4"></i>
             </a>
           </div>
@@ -523,15 +525,16 @@
         <!-- AI Fundamentals -->
         <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
           <div class="mb-6">
-            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Certification</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">AI Fundamentals</h3>
+            <span class="text-primary-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Certification</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors text-white">AI Fundamentals
+            </h3>
           </div>
-          <p class="text-gray-400 mb-6 flex-grow text-sm">Successfully completed the Artificial Intelligence
+          <p class="text-gray-300 mb-6 flex-grow text-sm">Successfully completed the Artificial Intelligence
             Fundamentals certification.</p>
-          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
-            <span class="text-xs text-gray-500 font-medium">Verified</span>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+            <span class="text-xs text-slate-400 font-medium">Verified</span>
             <button
-              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/5 hover:bg-slate-200 transition-all font-heading text-gray-200"
               data-title="AI Fundamentals" data-org="Certification"
               data-image="images/projects/23891A1201_Abhitej_Artificial Intelligence Fundamentals.pdf"
               data-desc="Certification in Artificial Intelligence Fundamentals.">
@@ -543,15 +546,17 @@
         <!-- IBM AI -->
         <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
           <div class="mb-6">
-            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">IBM</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Artificial Intelligence</h3>
+            <span class="text-primary-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">IBM</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors text-white">Artificial
+              Intelligence</h3>
           </div>
-          <p class="text-gray-400 mb-6 flex-grow text-sm">Recognized achievement in Artificial Intelligence concepts and
+          <p class="text-gray-300 mb-6 flex-grow text-sm">Recognized achievement in Artificial Intelligence concepts
+            and
             tools by IBM.</p>
-          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
-            <span class="text-xs text-gray-500 font-medium">Professional</span>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+            <span class="text-xs text-slate-400 font-medium">Professional</span>
             <button
-              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/5 hover:bg-slate-200 transition-all font-heading text-gray-200"
               data-title="IBM Artificial Intelligence" data-org="IBM" data-image="images/projects/IBM-AI.pdf"
               data-desc="Certification of completion for IBM Artificial Intelligence.">
               View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
@@ -562,15 +567,16 @@
         <!-- Cisco Data Science -->
         <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
           <div class="mb-6">
-            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Cisco</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Data Science</h3>
+            <span class="text-primary-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Cisco</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors text-white">Data Science
+            </h3>
           </div>
-          <p class="text-gray-400 mb-6 flex-grow text-sm">Completed foundational learning in Data Science concepts and
+          <p class="text-gray-300 mb-6 flex-grow text-sm">Completed foundational learning in Data Science concepts and
             analytics.</p>
-          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
-            <span class="text-xs text-gray-500 font-medium">Verified</span>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+            <span class="text-xs text-slate-400 font-medium">Verified</span>
             <button
-              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/5 hover:bg-slate-200 transition-all font-heading text-gray-200"
               data-title="Data Science" data-org="Cisco" data-image="images/projects/data science cisco.pdf"
               data-desc="Certification of completion for Data Science fundamentals by Cisco.">
               View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
@@ -581,8 +587,8 @@
         <!-- NPTEL Python -->
         <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
           <div class="mb-6">
-            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">NPTEL</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Programming in Python</h3>
+            <span class="text-primary-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">NPTEL</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">Programming in Python</h3>
           </div>
           <p class="text-gray-400 mb-6 flex-grow text-sm">Advanced achievement covering data structures and
             problem-solving in Python.</p>
@@ -600,8 +606,8 @@
         <!-- HackerRank Python -->
         <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
           <div class="mb-6">
-            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">HackerRank</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Python Programming</h3>
+            <span class="text-primary-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">HackerRank</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">Python Programming</h3>
           </div>
           <p class="text-gray-400 mb-6 flex-grow text-sm">Demonstrated expertise in functions, loops, and complex data
             structures through rigorous testing.</p>
@@ -621,8 +627,8 @@
         <!-- TASK Frontend -->
         <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
           <div class="mb-6">
-            <span class="text-primary-400 font-bold text-xs uppercase tracking-[0.2em] block mb-2">TASK</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-400 transition-colors">Frontend HTML5 & CSS3</h3>
+            <span class="text-primary-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">TASK</span>
+            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">Frontend HTML5 & CSS3</h3>
           </div>
           <p class="text-gray-400 mb-6 flex-grow text-sm">Completed a specialized three-day training program conducted
             by Telangana Academy for Skill and Knowledge.</p>
@@ -641,25 +647,25 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-32 bg-gray-900/50">
+  <section id="skills" class="py-32 bg-black/40">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-4xl font-bold font-heading text-center mb-20 text-center">Technical Arsenal</h2>
+      <h2 class="text-4xl font-bold font-heading text-center mb-20 text-white">Technical Arsenal</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Langs -->
         <div class="space-y-6 skill-card">
-          <h3 class="text-xl font-bold flex items-center gap-3 transition-colors">
+          <h3 class="text-xl font-bold flex items-center gap-3 transition-colors text-slate-800">
             <i data-lucide="code-2" class="text-primary-500 skill-icon transition-all"></i> Languages
           </h3>
           <div class="flex flex-wrap gap-3">
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-white/5 rounded-2xl text-gray-200 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all skill-tag-float"
               style="animation-delay: 0.1s">Java</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-white/5 rounded-2xl text-gray-200 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all skill-tag-float"
               style="animation-delay: 0.3s">Python</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-white/5 rounded-2xl text-gray-200 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all skill-tag-float"
               style="animation-delay: 0.5s">C
               Programming</span>
           </div>
@@ -667,7 +673,7 @@
 
         <!-- Web -->
         <div class="space-y-6 skill-card">
-          <h3 class="text-xl font-bold flex items-center gap-3 transition-colors">
+          <h3 class="text-xl font-bold flex items-center gap-3 transition-colors text-slate-800">
             <i data-lucide="globe" class="text-purple-500 skill-icon transition-all"></i> Web Stack
           </h3>
           <div class="flex flex-wrap gap-3">
@@ -689,7 +695,7 @@
 
         <!-- Database -->
         <div class="space-y-6 skill-card">
-          <h3 class="text-xl font-bold flex items-center gap-3 transition-colors">
+          <h3 class="text-xl font-bold flex items-center gap-3 transition-colors text-slate-800">
             <i data-lucide="database" class="text-pink-500 skill-icon transition-all"></i> Data & Core
           </h3>
           <div class="flex flex-wrap gap-3">
@@ -710,7 +716,7 @@
 
         <!-- Tools -->
         <div class="space-y-6 skill-card">
-          <h3 class="text-xl font-bold flex items-center gap-3 transition-colors">
+          <h3 class="text-xl font-bold flex items-center gap-3 transition-colors text-slate-800">
             <i data-lucide="wrench" class="text-emerald-500 skill-icon transition-all"></i> Tools
           </h3>
           <div class="flex flex-wrap gap-3">
@@ -740,16 +746,16 @@
       <div class="flex flex-col lg:flex-row gap-12">
         <!-- Contact Info -->
         <div class="lg:w-1/3 flex flex-col justify-center">
-          <h2 class="text-5xl font-bold font-heading mb-6 tracking-tight">Let's <span
+          <h2 class="text-5xl font-bold font-heading mb-6 tracking-tight text-white">Let's <span
               class="gradient-text">Connect</span></h2>
-          <p class="text-xl text-gray-400 mb-12">I'm always open to discussing new projects, internships, or technical
+          <p class="text-xl text-gray-300 mb-12">I'm always open to discussing new projects, internships, or technical
             collaborations. Drop me a message!</p>
 
           <div class="space-y-4">
             <a href="mailto:abhitejabhitej19@gmail.com"
               class="flex items-center gap-4 p-4 glass-card rounded-2xl group">
               <div
-                class="w-12 h-12 bg-primary-600/20 rounded-xl flex items-center justify-center text-primary-400 group-hover:bg-primary-600 group-hover:text-white transition-all">
+                class="w-12 h-12 bg-primary-600/20 rounded-xl flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition-all">
                 <i data-lucide="mail"></i>
               </div>
               <div>
@@ -790,23 +796,23 @@
             <form id="contact-form" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-2">
-                  <label class="text-sm font-semibold text-gray-400 ml-1">Full Name</label>
+                  <label class="text-sm font-semibold text-gray-300 ml-1">Full Name</label>
                   <input type="text" name="name" required class="w-full px-6 py-4 rounded-2xl form-input text-white"
                     placeholder="John Doe">
                 </div>
                 <div class="space-y-2">
-                  <label class="text-sm font-semibold text-gray-400 ml-1">Email Address</label>
+                  <label class="text-sm font-semibold text-gray-300 ml-1">Email Address</label>
                   <input type="email" name="email" required class="w-full px-6 py-4 rounded-2xl form-input text-white"
                     placeholder="john@example.com">
                 </div>
               </div>
               <div class="space-y-2">
-                <label class="text-sm font-semibold text-gray-400 ml-1">Subject</label>
+                <label class="text-sm font-semibold text-gray-300 ml-1">Subject</label>
                 <input type="text" name="subject" required class="w-full px-6 py-4 rounded-2xl form-input text-white"
                   placeholder="Project Inquiry">
               </div>
               <div class="space-y-2">
-                <label class="text-sm font-semibold text-gray-400 ml-1">Message</label>
+                <label class="text-sm font-semibold text-gray-300 ml-1">Message</label>
                 <textarea name="message" rows="5" required
                   class="w-full px-6 py-4 rounded-2xl form-input text-white resize-none"
                   placeholder="Tell me about your project..."></textarea>
@@ -826,7 +832,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-12 border-t border-white/5 text-center text-gray-500 text-sm">
+  <footer class="py-12 border-t border-black/5 text-center text-slate-400 text-sm">
     <div class="max-w-7xl mx-auto px-6">
       <p>&copy; 2026 Salla Abhitej</p>
     </div>
@@ -840,26 +846,26 @@
     <!-- Content -->
     <div class="absolute inset-0 flex items-center justify-center p-4 md:p-10 pointer-events-none">
       <div
-        class="bg-gray-900 w-full max-w-5xl h-full max-h-[90vh] rounded-[32px] border border-white/10 shadow-2xl flex flex-col pointer-events-auto overflow-hidden animate-scale-in">
+        class="bg-[#0a0a0b] w-full max-w-5xl h-full max-h-[90vh] rounded-[32px] border border-white/5 shadow-2xl flex flex-col pointer-events-auto overflow-hidden animate-scale-in">
         <!-- Modal Header -->
-        <div class="p-6 border-b border-white/10 flex justify-between items-center bg-gray-900/50 backdrop-blur-md">
+        <div class="p-6 border-b border-black/5 flex justify-between items-center bg-zinc-900/50 backdrop-blur-md">
           <div class="flex items-center gap-4">
-            <div class="w-10 h-10 bg-primary-600/20 rounded-xl flex items-center justify-center text-primary-400">
+            <div class="w-10 h-10 bg-primary-600/10 rounded-xl flex items-center justify-center text-primary-600">
               <i data-lucide="file-text"></i>
             </div>
             <div>
-              <h3 class="font-bold font-heading text-lg">S_Abhitej_Resume.docx</h3>
-              <p class="text-xs text-gray-500">Curriculum Vitae</p>
+              <h3 class="font-bold font-heading text-lg text-white">S_Abhitej_Resume.docx</h3>
+              <p class="text-xs text-gray-400">Curriculum Vitae</p>
             </div>
           </div>
           <div class="flex items-center gap-2">
             <a href="S_Abhitej_Resume.docx" download
-              class="p-2 hover:bg-white/5 rounded-lg text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+              class="p-2 hover:bg-black/5 rounded-lg text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
               <i data-lucide="download" class="w-5 h-5"></i>
               <span class="hidden md:inline">Download</span>
             </a>
             <button id="close-resume"
-              class="p-2 hover:bg-white/5 rounded-lg text-gray-400 hover:text-white transition-colors">
+              class="p-2 hover:bg-black/5 rounded-lg text-gray-400 hover:text-white transition-colors">
               <i data-lucide="x" class="w-6 h-6"></i>
             </button>
           </div>
@@ -945,17 +951,17 @@
     <div class="absolute inset-0 bg-black/90 backdrop-blur-md" id="cert-backdrop"></div>
     <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
       <div
-        class="bg-gray-900 w-full max-w-4xl rounded-[40px] border border-white/10 shadow-2xl flex flex-col pointer-events-auto overflow-hidden animate-scale-in">
+        class="bg-[#0a0a0b] w-full max-w-4xl rounded-[40px] border border-white/5 shadow-2xl flex flex-col pointer-events-auto overflow-hidden animate-scale-in">
         <!-- Header -->
-        <div class="p-8 border-b border-white/5 flex justify-between items-center bg-gray-900/50">
+        <div class="p-8 border-b border-black/5 flex justify-between items-center bg-zinc-900/50">
           <div>
-            <h3 id="cert-modal-title" class="text-2xl font-bold font-heading">Certificate Title</h3>
-            <p id="cert-modal-org" class="text-primary-400 font-medium mt-1 uppercase tracking-widest text-xs">
+            <h3 id="cert-modal-title" class="text-2xl font-bold font-heading text-white">Certificate Title</h3>
+            <p id="cert-modal-org" class="text-primary-600 font-medium mt-1 uppercase tracking-widest text-xs">
               Organization
             </p>
           </div>
           <button id="close-cert"
-            class="p-3 hover:bg-white/5 rounded-2xl text-gray-400 hover:text-white transition-all">
+            class="p-3 hover:bg-black/5 rounded-2xl text-slate-400 hover:text-white transition-all">
             <i data-lucide="x" class="w-6 h-6"></i>
           </button>
         </div>
