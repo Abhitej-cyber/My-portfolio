@@ -25,7 +25,7 @@
   <meta property="twitter:description"
     content="Innovation in AI and elegant code developments. Explore my projects and certificates.">
   <meta property="twitter:image" content="images/profile.png">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,16 +57,16 @@
         extend: {
           colors: {
             primary: {
-              50: '#f5f3ff',
-              100: '#ede9fe',
-              200: '#ddd6fe',
-              300: '#c4b5fd',
-              400: '#a78bfa',
-              500: '#8b5cf6',
-              600: '#7c3aed',
-              700: '#6d28d9',
-              800: '#5b21b6',
-              900: '#4c1d95',
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
             }
           },
           fontFamily: {
@@ -90,8 +90,8 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #050505;
-      color: #f8fafc;
+      background-color: #f0f9ff;
+      color: #0f172a;
     }
 
     h1,
@@ -99,40 +99,42 @@
     h3,
     h4 {
       font-family: 'Outfit', sans-serif;
+      color: #1e3a8a;
     }
 
     .glass-nav {
-      background: rgba(5, 5, 5, 0.8);
+      background: rgba(240, 249, 255, 0.85);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.1);
     }
 
     .glass-card {
-      background: rgba(15, 15, 15, 0.4);
+      background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(59, 130, 246, 0.1);
       transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
     }
 
     .glass-card:hover {
-      background: rgba(20, 20, 20, 0.6);
+      background: rgba(255, 255, 255, 0.8);
       border: 1px solid rgba(139, 92, 246, 0.3);
       transform: translateY(-5px);
-      box-shadow: 0 20px 40px -20px rgba(139, 92, 246, 0.3);
+      box-shadow: 0 20px 40px -20px rgba(139, 92, 246, 0.2);
     }
 
     .form-input {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
-      color: #ffffff !important;
+      color: #0f172a !important;
     }
 
     .form-input:focus {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 1);
       border-color: #8b5cf6;
       outline: none;
-      box-shadow: 0 0 15px -5px rgba(139, 92, 246, 0.4);
+      box-shadow: 0 0 15px -5px rgba(139, 92, 246, 0.2);
     }
 
     .nav-link {
@@ -158,7 +160,7 @@
     }
 
     .gradient-text {
-      background: linear-gradient(to right, #60a5fa, #a78bfa, #f472b6);
+      background: linear-gradient(to right, #0284c7, #0ea5e9, #38bdf8);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -187,22 +189,22 @@
       }
     }
 
-    /* Custom scrollbar for Midnight theme */
+    /* Custom scrollbar for Light theme */
     ::-webkit-scrollbar {
       width: 8px;
     }
 
     ::-webkit-scrollbar-track {
-      background: #0a0a0a;
+      background: #f1f5f9;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #1f1f1f;
+      background: #cbd5e1;
       border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #2d2d2d;
+      background: #94a3b8;
     }
 
     /* Fluid background blobs */
@@ -243,9 +245,10 @@
       left: 0;
       width: 0%;
       height: 4px;
-      background: linear-gradient(to right, #3752f9, #a78bfa, #f472b6);
+      background: linear-gradient(to right, #3b82f6, #06b6d4);
       z-index: 100;
       transition: width 0.1s ease-out;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
     }
 
     /* Back to Top Button */
@@ -293,6 +296,39 @@
       transition: transform 0.1s ease-out;
       transform-style: preserve-3d;
     }
+
+    /* Section Dividers */
+    .section-divider {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      line-height: 0;
+      z-index: 20;
+    }
+
+    .section-divider svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 60px;
+    }
+
+    .divider-top {
+      top: 0;
+    }
+
+    .divider-bottom {
+      bottom: 0;
+    }
+
+    .fill-sky-arctic {
+      fill: #f0f9ff;
+    }
+
+    .fill-sky-50 {
+      fill: #f8fafc;
+      /* Matches sky-50/50 approx */
+    }
   </style>
 </head>
 
@@ -308,21 +344,18 @@
   </button>
 
   <!-- Dynamic Fluid Background -->
-  <div class="fixed inset-0 w-full h-full z-[-1] overflow-hidden bg-[#050505]">
+  <div class="fixed inset-0 w-full h-full z-[-1] overflow-hidden bg-[#f0f9ff]">
     <div
-      class="absolute top-0 -left-4 w-96 h-96 bg-primary-600 rounded-full mix-blend-lighten filter blur-[120px] opacity-20 animate-blob">
+      class="absolute top-0 -left-4 w-[500px] h-[500px] bg-blue-200 rounded-full mix-blend-multiply filter blur-[120px] opacity-50 animate-blob">
     </div>
     <div
-      class="absolute top-0 -right-4 w-96 h-96 bg-purple-700 rounded-full mix-blend-lighten filter blur-[120px] opacity-20 animate-blob animation-delay-2000">
+      class="absolute top-0 -right-4 w-[500px] h-[500px] bg-cyan-200 rounded-full mix-blend-multiply filter blur-[120px] opacity-50 animate-blob animation-delay-2000">
     </div>
     <div
-      class="absolute -bottom-8 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-lighten filter blur-[120px] opacity-20 animate-blob animation-delay-4000">
+      class="absolute -bottom-8 left-1/4 w-[500px] h-[500px] bg-sky-200 rounded-full mix-blend-multiply filter blur-[120px] opacity-50 animate-blob animation-delay-4000">
     </div>
     <div
-      class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-600 rounded-full mix-blend-lighten filter blur-[120px] opacity-20 animate-blob animation-delay-2000">
-    </div>
-    <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-900 rounded-full mix-blend-lighten filter blur-[150px] opacity-10 animate-blob animation-delay-4000">
+      class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-indigo-100 rounded-full mix-blend-multiply filter blur-[120px] opacity-40 animate-blob animation-delay-2000">
     </div>
   </div>
 
@@ -333,11 +366,12 @@
 
       <!-- Desktop Nav -->
       <div class="hidden md:flex gap-8 text-sm font-medium">
-        <a href="#about" class="nav-link hover:text-primary-600">About</a>
-        <a href="#projects" class="nav-link hover:text-primary-600">Projects</a>
-        <a href="#certification" class="nav-link hover:text-primary-600">Certificates</a>
-        <a href="#skills" class="nav-link hover:text-primary-600">Skills</a>
-        <a href="#contact" class="nav-link hover:text-primary-600">Contact</a>
+        <a href="#about" class="nav-link hover:text-primary-600 text-slate-700">About</a>
+        <a href="#projects" class="nav-link hover:text-primary-600 text-slate-700">Projects</a>
+        <a href="#github" class="nav-link hover:text-primary-600 text-slate-700">GitHub Activity</a>
+        <a href="#certification" class="nav-link hover:text-primary-600 text-slate-700">Certificates</a>
+        <a href="#skills" class="nav-link hover:text-primary-600 text-slate-700">Skills</a>
+        <a href="#contact" class="nav-link hover:text-primary-600 text-slate-700">Contact</a>
       </div>
 
       <button class="md:hidden text-gray-900" id="menu-btn">
@@ -347,13 +381,14 @@
 
     <!-- Mobile Nav Menu -->
     <div id="mobile-menu"
-      class="hidden md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-lg border-b border-white/5 p-6 flex flex-col gap-4 text-center">
-      <a href="#about" class="hover:text-violet-400 transition-colors text-white/80 font-medium">About</a>
-      <a href="#projects" class="hover:text-violet-400 transition-colors text-white/80 font-medium">Projects</a>
+      class="hidden md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-black/5 p-6 flex flex-col gap-4 text-center">
+      <a href="#about" class="hover:text-primary-600 transition-colors text-slate-700 font-medium">About</a>
+      <a href="#projects" class="hover:text-primary-600 transition-colors text-slate-700 font-medium">Projects</a>
+      <a href="#github" class="hover:text-primary-600 transition-colors text-slate-700 font-medium">GitHub Activity</a>
       <a href="#certification"
-        class="hover:text-violet-400 transition-colors text-white/80 font-medium">Certificates</a>
-      <a href="#skills" class="hover:text-violet-400 transition-colors text-white/80 font-medium">Skills</a>
-      <a href="#contact" class="hover:text-violet-400 transition-colors text-white/80 font-medium">Contact</a>
+        class="hover:text-primary-600 transition-colors text-slate-700 font-medium">Certificates</a>
+      <a href="#skills" class="hover:text-primary-600 transition-colors text-slate-700 font-medium">Skills</a>
+      <a href="#contact" class="hover:text-primary-600 transition-colors text-slate-700 font-medium">Contact</a>
     </div>
   </nav>
 
@@ -361,13 +396,13 @@
   <section class="min-h-screen relative flex items-center justify-center overflow-hidden pt-20">
     <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
       <div
-        class="inline-block px-4 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm font-medium mb-6 animate-fade-in">
+        class="inline-block px-4 py-1 rounded-full bg-primary-100 border border-primary-200 text-primary-700 text-sm font-medium mb-6 animate-fade-in uppercase tracking-wider">
         Ready to Build
       </div>
-      <h1 class="text-5xl md:text-8xl font-bold font-heading mb-6 tracking-tight text-white">
+      <h1 class="text-5xl md:text-8xl font-bold font-heading mb-6 tracking-tight text-slate-900">
         Hi, I'm <span class="gradient-text">Salla Abhitej</span>
       </h1>
-      <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+      <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
         Code Developer | Innovator | Tech Enthusiast. Building the future with intelligent systems and elegant code.
       </p>
 
@@ -378,7 +413,7 @@
           <i data-lucide="eye" class="w-5 h-5"></i>
         </button>
         <a href="#projects"
-          class="px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-2xl font-semibold transition-all">
+          class="px-8 py-4 bg-white/80 hover:bg-white text-slate-700 border border-slate-200 rounded-2xl font-semibold transition-all shadow-sm">
           View My Work
         </a>
       </div>
@@ -393,41 +428,60 @@
   <section id="about" class="py-32 relative">
     <div class="max-w-4xl mx-auto px-6">
       <div class="flex flex-col items-center text-center mb-16">
-        <h2 class="text-4xl font-bold font-heading mb-4">About Me</h2>
+        <h2 class="text-4xl font-bold font-heading mb-4 text-slate-900">About Me</h2>
         <div class="w-20 h-1.5 bg-primary-500 rounded-full"></div>
       </div>
 
       <div class="glass-card p-8 md:p-12 rounded-3xl">
-        <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-6">
-          I'm a B.Tech student in Information Technology at <span class="text-primary-600 font-semibold">VIGNAN</span>,
-          driven
-          by a passion for Artificial Intelligence and real-world applications.
+        <p class="text-lg md:text-xl text-slate-700 leading-relaxed mb-8">
+          I am currently a <span class="text-primary-600 font-semibold">B.Tech student in Information Technology at
+            VIGNAN University</span>. I have always been fascinated by intelligent systems and how we can use technology
+          to solve real-world problems. My passion lies in various fields of software development, including
+          <span class="text-blue-600 font-medium italic">Web Development</span> and <span
+            class="text-sky-600 font-medium italic">Artificial Intelligence</span>.
         </p>
-        <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-6">
-          My goal is to blend technology with purpose, creating solutions that not only showcase innovation but also
-          make a difference. I strongly believe that <span class="text-primary-600 italic font-medium">"Technology rules
-            the future"</span> — and that's the motto I live by.
+
+        <p class="text-lg md:text-xl text-slate-700 leading-relaxed mb-8">
+          My technical expertise includes <span class="font-semibold text-primary-600">Java application
+            development</span>,
+          <span class="font-semibold text-sky-600">Python programming</span>, and working with modern database and
+          web technologies. I am a builder at heart, specializing in turning ambitious ideas into reality—from
+          multithreaded chat systems to complex AI models.
         </p>
-        <p class="text-lg md:text-xl text-gray-200 leading-relaxed">
-          Whether it's building with code, experimenting with new tech, or collaborating on forward-thinking ideas, I'm
-          always eager to learn, build, and contribute to a better tomorrow.
+
+        <p class="text-lg md:text-xl text-slate-700 leading-relaxed mb-8">
+          I strongly believe that technology is the ultimate force that can <span
+            class="gradient-text font-bold italic">change the world</span> and transform global industries. With a
+          constant learning attitude, I'm always exploring the latest advancements to stay at the cutting edge of
+          innovation.
+        </p>
+
+        <p class="text-lg md:text-xl text-slate-700 leading-relaxed">
+          Beyond coding, I am an avid problem-solver and tech enthusiast. I thrive in collaborative environments,
+          ideating with people to shape the future of technology. My goal is to become a <span
+            class="text-primary-600 font-bold underline decoration-primary-500/30 underline-offset-4">Software
+            Developer</span> and leave a meaningful impact on the digital landscape.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-32 bg-black/40">
+  <section id="projects" class="py-32 bg-sky-50/50 relative">
+    <!-- Top Wave -->
+    <div class="section-divider divider-top">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+          class="fill-sky-arctic"></path>
+      </svg>
+    </div>
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex justify-between items-end mb-16">
         <div>
-          <h2 class="text-4xl font-bold font-heading mb-4 text-white">Featured Projects</h2>
-          <p class="text-gray-400">Selected work that highlights my skills and experience.</p>
+          <h2 class="text-4xl font-bold font-heading mb-4 text-slate-900">Featured Projects</h2>
+          <p class="text-slate-600">Selected work that highlights my skills and experience.</p>
         </div>
-        <a href="https://github.com/Abhitej-cyber" target="_blank"
-          class="hidden md:flex items-center gap-2 text-primary-600 hover:text-primary-300 transition-colors">
-          All Projects <i data-lucide="external-link" class="w-4 h-4"></i>
-        </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -443,13 +497,16 @@
             </div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold mb-4 text-white">Pupil Eyesight Detection</h3>
-            <p class="text-gray-300 mb-8 flex-grow">AI-powered mobile app to detect user's eyesight using just a phone
+            <h3 class="text-2xl font-bold mb-4 text-slate-900">Pupil Eyesight Detection</h3>
+            <p class="text-slate-600 mb-8 flex-grow">AI-powered mobile app to detect user's eyesight using just a phone
               camera with advanced pupil tracking.</p>
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">OpenCV</span>
-              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">Python</span>
-              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">Mobile</span>
+              <span
+                class="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs text-slate-600">OpenCV</span>
+              <span
+                class="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs text-slate-600">Python</span>
+              <span
+                class="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs text-slate-600">Mobile</span>
             </div>
             <a href="#" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
               View Details <i data-lucide="chevron-right" class="w-4 h-4"></i>
@@ -469,14 +526,16 @@
             </div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold mb-4 text-white">Helmet Wearing Detection</h3>
-            <p class="text-gray-300 mb-8 flex-grow">IoT solution using Gyroscope sensors to detect movement and notify
+            <h3 class="text-2xl font-bold mb-4 text-slate-900">Helmet Wearing Detection</h3>
+            <p class="text-slate-600 mb-8 flex-grow">IoT solution using Gyroscope sensors to detect movement and notify
               users with real-time safety alerts.</p>
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">Raspberry
+              <span class="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs text-slate-600">Raspberry
                 Pi</span>
-              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">Arduino</span>
-              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">Python</span>
+              <span
+                class="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs text-slate-600">Arduino</span>
+              <span
+                class="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs text-slate-600">Python</span>
             </div>
             <a href="#" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
               GitHub Repo <i data-lucide="github" class="w-4 h-4"></i>
@@ -496,12 +555,12 @@
             </div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold mb-4 text-white">Intelligence Quiz Game</h3>
-            <p class="text-gray-300 mb-8 flex-grow">Interactive application designed to evaluate student learning
+            <h3 class="text-2xl font-bold mb-4 text-slate-900">Intelligence Quiz Game</h3>
+            <p class="text-slate-600 mb-8 flex-grow">Interactive application designed to evaluate student learning
               through dynamic questioning logic.</p>
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">C</span>
-              <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-gray-300">Logic
+              <span class="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs text-slate-600">C</span>
+              <span class="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs text-slate-600">Logic
                 Design</span>
             </div>
             <a href="#" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
@@ -509,32 +568,138 @@
             </a>
           </div>
         </div>
+
+        <!-- View More Card -->
+        <div
+          class="glass-card group border-dashed border-2 border-slate-200 rounded-3xl flex flex-col items-center justify-center p-8 text-center hover:border-primary-500/50 transition-all min-h-[400px] md:col-span-2 lg:col-span-1 lg:col-start-2">
+          <div
+            class="w-16 h-16 bg-primary-600/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="github" class="w-8 h-8 text-primary-500"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-slate-900">More Projects</h3>
+          <p class="text-slate-600 mb-8 text-sm">Discover 20+ additional repositories including AI models and web tools
+            on my GitHub.</p>
+          <a href="https://github.com/Abhitej-cyber" target="_blank"
+            class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold transition-all text-sm flex items-center gap-2">
+            View All Repositories <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Wave -->
+    <div class="section-divider divider-bottom">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5,73.84-4.36,147.54,16.88,218.2,35.26,69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+          opacity=".25" fill="#f0f9ff"></path>
+        <path
+          d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5V0Z"
+          opacity=".5" fill="#f0f9ff"></path>
+        <path
+          d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+          class="fill-sky-arctic"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- GitHub Activity Section -->
+  <section id="github" class="py-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold font-heading mb-4 text-slate-900">GitHub Activity</h2>
+        <div class="w-20 h-1.5 bg-primary-500 rounded-full mx-auto mb-4"></div>
+        <p class="text-slate-600 max-w-2xl mx-auto">Tracking my journey through code, open-source contributions, and
+          continuous learning.</p>
+      </div>
+
+      <!-- Backdrop Glow -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-[-1]">
+        <div class="absolute top-1/2 left-1/4 w-96 h-96 bg-primary-600/5 rounded-full blur-[120px] animate-pulse">
+        </div>
+        <div
+          class="absolute top-1/3 right-1/4 w-96 h-96 bg-cyan-600/5 rounded-full blur-[120px] animate-pulse animation-delay-2000">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <!-- Main Stats -->
+        <div class="glass-card p-4 rounded-[32px] overflow-hidden flex items-center justify-center">
+          <img
+            src="https://github-readme-stats.vercel.app/api?username=Abhitej-cyber&show_icons=true&theme=default&border_radius=20&hide_border=true&bg_color=f0f9ff&title_color=3b82f6&text_color=1e3a8a&icon_color=06b6d4&include_all_commits=true&count_private=true"
+            alt="GitHub Stats" class="w-full h-auto">
+        </div>
+
+        <!-- Top Languages -->
+        <div class="glass-card p-4 rounded-[32px] overflow-hidden flex items-center justify-center">
+          <img
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=Abhitej-cyber&layout=compact&theme=default&border_radius=20&hide_border=true&bg_color=f0f9ff&title_color=3b82f6&text_color=1e3a8a"
+            alt="Top Languages" class="w-full h-auto">
+        </div>
+      </div>
+
+      <!-- Contribution Graph -->
+      <div class="glass-card p-8 rounded-[32px] overflow-hidden">
+        <h3 class="text-xl font-bold mb-6 text-slate-900 flex items-center gap-2">
+          <i data-lucide="git-commit" class="text-primary-500"></i> Contributions Streak
+        </h3>
+        <div class="w-full overflow-x-auto">
+          <img src="https://ghchart.rshah.org/3b82f6/Abhitej-cyber" alt="GitHub Contributions Chart"
+            class="min-w-[800px] md:min-w-full h-auto">
+        </div>
+        <div class="mt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div class="flex gap-8">
+            <div class="text-center">
+              <p id="github-repos" class="text-3xl font-bold text-primary-500">20+</p>
+              <p class="text-slate-500 text-sm">Repositories</p>
+            </div>
+            <div class="text-center">
+              <p id="github-commits" class="text-3xl font-bold text-purple-500">500+</p>
+              <p class="text-slate-500 text-sm">Total Commits</p>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl font-bold text-pink-500">10+</p>
+              <p class="text-slate-500 text-sm">Projects Done</p>
+            </div>
+          </div>
+          <a href="https://github.com/Abhitej-cyber" target="_blank"
+            class="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-2xl font-semibold transition-all flex items-center gap-2 shadow-lg shadow-primary-500/20">
+            Follow on GitHub <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Certification Section -->
-  <section id="certification" class="py-32">
+  <section id="certification" class="py-32 relative">
+    <!-- Top Wave -->
+    <div class="section-divider divider-top">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.83C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+          class="fill-sky-arctic"></path>
+      </svg>
+    </div>
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold font-heading mb-4">Certifications</h2>
-        <p class="text-gray-400">Recognized achievements and learning milestones.</p>
+        <h2 class="text-4xl font-bold font-heading mb-4 text-slate-900">Certifications</h2>
+        <p class="text-slate-600">Recognized achievements and learning milestones.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- AI Fundamentals -->
-        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full border border-slate-200">
           <div class="mb-6">
             <span class="text-primary-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Certification</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors text-white">AI Fundamentals
+            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors text-slate-900">AI Fundamentals
             </h3>
           </div>
-          <p class="text-gray-300 mb-6 flex-grow text-sm">Successfully completed the Artificial Intelligence
+          <p class="text-slate-600 mb-6 flex-grow text-sm">Successfully completed the Artificial Intelligence
             Fundamentals certification.</p>
           <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
             <span class="text-xs text-slate-400 font-medium">Verified</span>
             <button
-              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/5 hover:bg-slate-200 transition-all font-heading text-gray-200"
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-slate-100 rounded-lg border border-slate-200 hover:bg-slate-200 transition-all font-heading text-slate-700"
               data-title="AI Fundamentals" data-org="Certification"
               data-image="images/projects/23891A1201_Abhitej_Artificial Intelligence Fundamentals.pdf"
               data-desc="Certification in Artificial Intelligence Fundamentals.">
@@ -544,19 +709,18 @@
         </div>
 
         <!-- IBM AI -->
-        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full border border-slate-200">
           <div class="mb-6">
             <span class="text-primary-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">IBM</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors text-white">Artificial
+            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors text-slate-900">Artificial
               Intelligence</h3>
           </div>
-          <p class="text-gray-300 mb-6 flex-grow text-sm">Recognized achievement in Artificial Intelligence concepts
-            and
-            tools by IBM.</p>
+          <p class="text-slate-600 mb-6 flex-grow text-sm">Recognized achievement in Artificial Intelligence concepts
+            and tools by IBM.</p>
           <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
             <span class="text-xs text-slate-400 font-medium">Professional</span>
             <button
-              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/5 hover:bg-slate-200 transition-all font-heading text-gray-200"
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-slate-100 rounded-lg border border-slate-200 hover:bg-slate-200 transition-all font-heading text-slate-700"
               data-title="IBM Artificial Intelligence" data-org="IBM" data-image="images/projects/IBM-AI.pdf"
               data-desc="Certification of completion for IBM Artificial Intelligence.">
               View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
@@ -565,18 +729,18 @@
         </div>
 
         <!-- Cisco Data Science -->
-        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full border border-slate-200">
           <div class="mb-6">
             <span class="text-primary-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">Cisco</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors text-white">Data Science
+            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors text-slate-900">Data Science
             </h3>
           </div>
-          <p class="text-gray-300 mb-6 flex-grow text-sm">Completed foundational learning in Data Science concepts and
+          <p class="text-slate-600 mb-6 flex-grow text-sm">Completed foundational learning in Data Science concepts and
             analytics.</p>
           <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
             <span class="text-xs text-slate-400 font-medium">Verified</span>
             <button
-              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/5 hover:bg-slate-200 transition-all font-heading text-gray-200"
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-slate-100 rounded-lg border border-slate-200 hover:bg-slate-200 transition-all font-heading text-slate-700"
               data-title="Data Science" data-org="Cisco" data-image="images/projects/data science cisco.pdf"
               data-desc="Certification of completion for Data Science fundamentals by Cisco.">
               View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
@@ -585,17 +749,18 @@
         </div>
 
         <!-- NPTEL Python -->
-        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full border border-slate-200">
           <div class="mb-6">
             <span class="text-primary-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">NPTEL</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">Programming in Python</h3>
+            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors text-slate-900">Programming in
+              Python</h3>
           </div>
-          <p class="text-gray-400 mb-6 flex-grow text-sm">Advanced achievement covering data structures and
+          <p class="text-slate-600 mb-6 flex-grow text-sm">Advanced achievement covering data structures and
             problem-solving in Python.</p>
-          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
-            <span class="text-xs text-gray-500 font-medium">Advanced</span>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+            <span class="text-xs text-slate-400 font-medium">Advanced</span>
             <button
-              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-slate-100 rounded-lg border border-slate-200 hover:bg-slate-200 transition-all font-heading text-slate-700"
               data-title="Programming in Python" data-org="NPTEL" data-image="images/projects/NPTEL python.pdf"
               data-desc="Certification for successful completion of the Joy of Computing using Python course by NPTEL.">
               View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
@@ -604,17 +769,18 @@
         </div>
 
         <!-- HackerRank Python -->
-        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full border border-slate-200">
           <div class="mb-6">
             <span class="text-primary-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">HackerRank</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">Python Programming</h3>
+            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors text-slate-900">Python
+              Programming</h3>
           </div>
-          <p class="text-gray-400 mb-6 flex-grow text-sm">Demonstrated expertise in functions, loops, and complex data
+          <p class="text-slate-600 mb-6 flex-grow text-sm">Demonstrated expertise in functions, loops, and complex data
             structures through rigorous testing.</p>
-          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
-            <span class="text-xs text-gray-500 font-medium">Skills Verified</span>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+            <span class="text-xs text-slate-400 font-medium">Skills Verified</span>
             <button
-              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-slate-100 rounded-lg border border-slate-200 hover:bg-slate-200 transition-all font-heading text-slate-700"
               data-title="HackerRank Python" data-org="HackerRank"
               data-image="images/projects/Infosys python basics certificate.pdf"
               data-desc="Earned the Python (Basic) certification from HackerRank by demonstrating proficiency in various Python concepts.">
@@ -625,17 +791,18 @@
 
 
         <!-- TASK Frontend -->
-        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+        <div class="glass-card p-8 rounded-3xl group flex flex-col h-full border border-slate-200">
           <div class="mb-6">
             <span class="text-primary-600 font-bold text-xs uppercase tracking-[0.2em] block mb-2">TASK</span>
-            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">Frontend HTML5 & CSS3</h3>
+            <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors text-slate-900">Frontend HTML5 &
+              CSS3</h3>
           </div>
-          <p class="text-gray-400 mb-6 flex-grow text-sm">Completed a specialized three-day training program conducted
+          <p class="text-slate-600 mb-6 flex-grow text-sm">Completed a specialized three-day training program conducted
             by Telangana Academy for Skill and Knowledge.</p>
-          <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
-            <span class="text-xs text-gray-500 font-medium">Oct 2024</span>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+            <span class="text-xs text-slate-400 font-medium">Oct 2024</span>
             <button
-              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all font-heading"
+              class="cert-view-btn inline-flex items-center gap-2 text-xs font-semibold py-2 px-3 bg-slate-100 rounded-lg border border-slate-200 hover:bg-slate-200 transition-all font-heading text-slate-700"
               data-title="Frontend with HTML5 & CSS3" data-org="TASK" data-image="images/projects/TASK CERTIFICATE .jpg"
               data-desc="Successfully completed an intensive training on Frontend Development using HTML5 and CSS3, conducted by Telangana Academy for Skill and Knowledge (TASK) in October 2024.">
               View Certificate <i data-lucide="eye" class="w-3 h-3"></i>
@@ -647,9 +814,17 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-32 bg-black/40">
+  <section id="skills" class="py-32 bg-sky-50/50 relative">
+    <!-- Top Wave -->
+    <div class="section-divider divider-top">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+          class="fill-sky-arctic"></path>
+      </svg>
+    </div>
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-4xl font-bold font-heading text-center mb-20 text-white">Technical Arsenal</h2>
+      <h2 class="text-4xl font-bold font-heading text-center mb-20 text-slate-900">Technical Arsenal</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Langs -->
@@ -659,13 +834,13 @@
           </h3>
           <div class="flex flex-wrap gap-3">
             <span
-              class="px-4 py-2 bg-white border border-white/5 rounded-2xl text-gray-200 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-primary-50 hover:border-primary-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.1s">Java</span>
             <span
-              class="px-4 py-2 bg-white border border-white/5 rounded-2xl text-gray-200 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-primary-50 hover:border-primary-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.3s">Python</span>
             <span
-              class="px-4 py-2 bg-white border border-white/5 rounded-2xl text-gray-200 font-medium hover:bg-primary-500/10 hover:border-primary-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-primary-50 hover:border-primary-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.5s">C
               Programming</span>
           </div>
@@ -674,20 +849,20 @@
         <!-- Web -->
         <div class="space-y-6 skill-card">
           <h3 class="text-xl font-bold flex items-center gap-3 transition-colors text-slate-800">
-            <i data-lucide="globe" class="text-purple-500 skill-icon transition-all"></i> Web Stack
+            <i data-lucide="globe" class="text-blue-500 skill-icon transition-all"></i> Web Stack
           </h3>
           <div class="flex flex-wrap gap-3">
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-blue-50 hover:border-blue-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.2s">HTML5</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-blue-50 hover:border-blue-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.4s">CSS3</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-blue-50 hover:border-blue-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.6s">JavaScript</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-purple-500/10 hover:border-purple-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-blue-50 hover:border-blue-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.8s">Tailwind
               CSS</span>
           </div>
@@ -696,20 +871,20 @@
         <!-- Database -->
         <div class="space-y-6 skill-card">
           <h3 class="text-xl font-bold flex items-center gap-3 transition-colors text-slate-800">
-            <i data-lucide="database" class="text-pink-500 skill-icon transition-all"></i> Data & Core
+            <i data-lucide="database" class="text-cyan-500 skill-icon transition-all"></i> Data & Core
           </h3>
           <div class="flex flex-wrap gap-3">
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-cyan-50 hover:border-cyan-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.3s">MySQL</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-cyan-50 hover:border-cyan-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.5s">JDBC</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-cyan-50 hover:border-cyan-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.7s">OOPs</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-pink-500/10 hover:border-pink-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-cyan-50 hover:border-cyan-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.9s">OS</span>
           </div>
         </div>
@@ -717,18 +892,18 @@
         <!-- Tools -->
         <div class="space-y-6 skill-card">
           <h3 class="text-xl font-bold flex items-center gap-3 transition-colors text-slate-800">
-            <i data-lucide="wrench" class="text-emerald-500 skill-icon transition-all"></i> Tools
+            <i data-lucide="wrench" class="text-sky-500 skill-icon transition-all"></i> Tools
           </h3>
           <div class="flex flex-wrap gap-3">
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-sky-50 hover:border-sky-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.4s">Git</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-sky-50 hover:border-sky-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.6s">VS
               Code</span>
             <span
-              class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-gray-300 font-medium hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all skill-tag-float"
+              class="px-4 py-2 bg-white border border-slate-200 rounded-2xl text-slate-600 font-medium hover:bg-sky-50 hover:border-sky-200 transition-all skill-tag-float shadow-sm"
               style="animation-delay: 0.8s">Eclipse</span>
           </div>
         </div>
@@ -746,9 +921,9 @@
       <div class="flex flex-col lg:flex-row gap-12">
         <!-- Contact Info -->
         <div class="lg:w-1/3 flex flex-col justify-center">
-          <h2 class="text-5xl font-bold font-heading mb-6 tracking-tight text-white">Let's <span
+          <h2 class="text-5xl font-bold font-heading mb-6 tracking-tight text-slate-900">Let's <span
               class="gradient-text">Connect</span></h2>
-          <p class="text-xl text-gray-300 mb-12">I'm always open to discussing new projects, internships, or technical
+          <p class="text-xl text-slate-600 mb-12">I'm always open to discussing new projects, internships, or technical
             collaborations. Drop me a message!</p>
 
           <div class="space-y-4">
@@ -796,25 +971,24 @@
             <form id="contact-form" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-2">
-                  <label class="text-sm font-semibold text-gray-300 ml-1">Full Name</label>
-                  <input type="text" name="name" required class="w-full px-6 py-4 rounded-2xl form-input text-white"
+                  <label class="text-sm font-semibold text-slate-700 ml-1">Full Name</label>
+                  <input type="text" name="name" required class="w-full px-6 py-4 rounded-2xl form-input"
                     placeholder="John Doe">
                 </div>
                 <div class="space-y-2">
-                  <label class="text-sm font-semibold text-gray-300 ml-1">Email Address</label>
-                  <input type="email" name="email" required class="w-full px-6 py-4 rounded-2xl form-input text-white"
+                  <label class="text-sm font-semibold text-slate-700 ml-1">Email Address</label>
+                  <input type="email" name="email" required class="w-full px-6 py-4 rounded-2xl form-input"
                     placeholder="john@example.com">
                 </div>
               </div>
               <div class="space-y-2">
-                <label class="text-sm font-semibold text-gray-300 ml-1">Subject</label>
-                <input type="text" name="subject" required class="w-full px-6 py-4 rounded-2xl form-input text-white"
+                <label class="text-sm font-semibold text-slate-700 ml-1">Subject</label>
+                <input type="text" name="subject" required class="w-full px-6 py-4 rounded-2xl form-input"
                   placeholder="Project Inquiry">
               </div>
               <div class="space-y-2">
-                <label class="text-sm font-semibold text-gray-300 ml-1">Message</label>
-                <textarea name="message" rows="5" required
-                  class="w-full px-6 py-4 rounded-2xl form-input text-white resize-none"
+                <label class="text-sm font-semibold text-slate-700 ml-1">Message</label>
+                <textarea name="message" rows="5" required class="w-full px-6 py-4 rounded-2xl form-input resize-none"
                   placeholder="Tell me about your project..."></textarea>
               </div>
               <button type="submit"
@@ -841,38 +1015,38 @@
   <!-- Resume Modal -->
   <div id="resume-modal" class="fixed inset-0 z-[60] hidden">
     <!-- Backdrop -->
-    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="modal-backdrop"></div>
+    <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" id="modal-backdrop"></div>
 
     <!-- Content -->
     <div class="absolute inset-0 flex items-center justify-center p-4 md:p-10 pointer-events-none">
       <div
-        class="bg-[#0a0a0b] w-full max-w-5xl h-full max-h-[90vh] rounded-[32px] border border-white/5 shadow-2xl flex flex-col pointer-events-auto overflow-hidden animate-scale-in">
+        class="bg-white w-full max-w-5xl h-full max-h-[90vh] rounded-[32px] border border-slate-200 shadow-2xl flex flex-col pointer-events-auto overflow-hidden animate-scale-in">
         <!-- Modal Header -->
-        <div class="p-6 border-b border-black/5 flex justify-between items-center bg-zinc-900/50 backdrop-blur-md">
+        <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-white/50 backdrop-blur-md">
           <div class="flex items-center gap-4">
             <div class="w-10 h-10 bg-primary-600/10 rounded-xl flex items-center justify-center text-primary-600">
               <i data-lucide="file-text"></i>
             </div>
             <div>
-              <h3 class="font-bold font-heading text-lg text-white">S_Abhitej_Resume.docx</h3>
-              <p class="text-xs text-gray-400">Curriculum Vitae</p>
+              <h3 class="font-bold font-heading text-lg text-slate-900">S_Abhitej_Resume.docx</h3>
+              <p class="text-xs text-slate-400">Curriculum Vitae</p>
             </div>
           </div>
           <div class="flex items-center gap-2">
             <a href="S_Abhitej_Resume.docx" download
-              class="p-2 hover:bg-black/5 rounded-lg text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+              class="p-2 hover:bg-slate-100 rounded-lg text-slate-500 hover:text-slate-900 transition-colors flex items-center gap-2 text-sm font-medium">
               <i data-lucide="download" class="w-5 h-5"></i>
               <span class="hidden md:inline">Download</span>
             </a>
             <button id="close-resume"
-              class="p-2 hover:bg-black/5 rounded-lg text-gray-400 hover:text-white transition-colors">
+              class="p-2 hover:bg-slate-100 rounded-lg text-slate-500 hover:text-slate-900 transition-colors">
               <i data-lucide="x" class="w-6 h-6"></i>
             </button>
           </div>
         </div>
 
         <!-- Modal Body (Preview Placeholder) -->
-        <div class="flex-grow overflow-y-auto p-8 bg-gray-950/50">
+        <div class="flex-grow overflow-y-auto p-8 bg-sky-50/30">
           <div class="max-w-3xl mx-auto bg-white text-gray-900 p-12 shadow-inner rounded-sm min-h-screen">
             <!-- Simulated Resume Content for Readability -->
             <div class="space-y-8">
@@ -948,20 +1122,20 @@
 
   <!-- Certificate Modal -->
   <div id="cert-modal" class="fixed inset-0 z-[60] hidden">
-    <div class="absolute inset-0 bg-black/90 backdrop-blur-md" id="cert-backdrop"></div>
+    <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-md" id="cert-backdrop"></div>
     <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
       <div
-        class="bg-[#0a0a0b] w-full max-w-4xl rounded-[40px] border border-white/5 shadow-2xl flex flex-col pointer-events-auto overflow-hidden animate-scale-in">
+        class="bg-white w-full max-w-4xl rounded-[40px] border border-slate-200 shadow-2xl flex flex-col pointer-events-auto overflow-hidden animate-scale-in">
         <!-- Header -->
-        <div class="p-8 border-b border-black/5 flex justify-between items-center bg-zinc-900/50">
+        <div class="p-8 border-b border-slate-100 flex justify-between items-center bg-white/50">
           <div>
-            <h3 id="cert-modal-title" class="text-2xl font-bold font-heading text-white">Certificate Title</h3>
+            <h3 id="cert-modal-title" class="text-2xl font-bold font-heading text-slate-900">Certificate Title</h3>
             <p id="cert-modal-org" class="text-primary-600 font-medium mt-1 uppercase tracking-widest text-xs">
               Organization
             </p>
           </div>
           <button id="close-cert"
-            class="p-3 hover:bg-black/5 rounded-2xl text-slate-400 hover:text-white transition-all">
+            class="p-3 hover:bg-slate-100 rounded-2xl text-slate-400 hover:text-slate-900 transition-all">
             <i data-lucide="x" class="w-6 h-6"></i>
           </button>
         </div>
@@ -1250,6 +1424,34 @@
         }
       });
     }
+
+    // Dynamic GitHub Stats
+    async function fetchGitHubStats() {
+      try {
+        const username = 'Abhitej-cyber';
+        const userResponse = await fetch(`https://api.github.com/users/${username}`);
+        const userData = await userResponse.json();
+
+        if (userData.public_repos) {
+          const repoEl = document.getElementById('github-repos');
+          if (repoEl) repoEl.innerText = userData.public_repos + '+';
+        }
+
+        // Search for commits by author
+        const searchResponse = await fetch(`https://api.github.com/search/commits?q=author:${username}`, {
+          headers: { 'Accept': 'application/vnd.github.cloak-preview' }
+        });
+        const searchData = await searchResponse.json();
+        if (searchData.total_count) {
+          const commitEl = document.getElementById('github-commits');
+          if (commitEl) commitEl.innerText = searchData.total_count + '+';
+        }
+      } catch (error) {
+        console.log('GitHub stats fetch error:', error);
+      }
+    }
+
+    fetchGitHubStats();
   </script>
 </body>
 
