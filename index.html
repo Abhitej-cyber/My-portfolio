@@ -972,23 +972,23 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-2">
                   <label class="text-sm font-semibold text-slate-700 ml-1">Full Name</label>
-                  <input type="text" name="name" required class="w-full px-6 py-4 rounded-2xl form-input"
+                  <input type="text" id="name" name="name" required class="w-full px-6 py-4 rounded-2xl form-input"
                     placeholder="John Doe">
                 </div>
                 <div class="space-y-2">
                   <label class="text-sm font-semibold text-slate-700 ml-1">Email Address</label>
-                  <input type="email" name="email" required class="w-full px-6 py-4 rounded-2xl form-input"
+                  <input type="email" id="email" name="email" required class="w-full px-6 py-4 rounded-2xl form-input"
                     placeholder="john@example.com">
                 </div>
               </div>
               <div class="space-y-2">
                 <label class="text-sm font-semibold text-slate-700 ml-1">Subject</label>
-                <input type="text" name="subject" required class="w-full px-6 py-4 rounded-2xl form-input"
+                <input type="text" id="subject" name="subject" required class="w-full px-6 py-4 rounded-2xl form-input"
                   placeholder="Project Inquiry">
               </div>
               <div class="space-y-2">
                 <label class="text-sm font-semibold text-slate-700 ml-1">Message</label>
-                <textarea name="message" rows="5" required class="w-full px-6 py-4 rounded-2xl form-input resize-none"
+                <textarea id="message" name="message" rows="5" required class="w-full px-6 py-4 rounded-2xl form-input resize-none"
                   placeholder="Tell me about your project..."></textarea>
               </div>
               <button type="submit"
@@ -1372,57 +1372,43 @@
     });
 
     // Contact Form Handling
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
+    function sendMail(e) {
+      e.preventDefault();
 
-    if (contactForm) {
-      contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(contactForm);
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.innerHTML;
+      const params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value,
+        time: new Date().toLocaleString()
+      };
 
-        // Loading state
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Sending...';
-        lucide.createIcons();
+      const submitBtn = document.querySelector('#contact-form button[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Sending...';
+      lucide.createIcons();
 
-        try {
-          console.log("Submitting form...");
-
-          if (typeof emailjs === 'undefined') {
-            throw new Error("EmailJS library not loaded. Please check your internet connection.");
-          }
-
-          const result = await emailjs.sendForm(
-            'service_9zyw9k1',
-            'template_0zmv6en',
-            e.target
-          );
-
-          console.log("SUCCESS!", result.status, result.text);
-
-          if (result.status === 200 || result.text === 'OK') {
-            formStatus.innerHTML = '<div class="flex flex-col items-center gap-3"><i data-lucide="check-circle" class="w-10 h-10 text-emerald-400"></i><p>Thanks! Your message has been sent successfully. ✨</p></div>';
-            formStatus.classList.remove('hidden', 'bg-red-500/10', 'text-red-400');
-            formStatus.classList.add('bg-emerald-500/10', 'text-emerald-400');
-            contactForm.reset();
-            contactForm.style.display = 'none';
-          } else {
-            throw new Error("Submission failed with status: " + result.status);
-          }
-        } catch (error) {
-          console.error("FAILED...", error);
-          const errorMsg = error.text || error.message || JSON.stringify(error);
-          formStatus.innerHTML = `<div class="flex flex-col items-center gap-2"><i data-lucide="alert-circle" class="w-8 h-8 text-red-400"></i><p>Error: ${errorMsg}</p></div>`;
-          formStatus.classList.remove('hidden', 'bg-emerald-500/10', 'text-emerald-400');
-          formStatus.classList.add('bg-red-500/10', 'text-red-400');
-        } finally {
+      emailjs.send("service_9zyw9k1", "template_0zmv6en", params)
+        .then(function (response) {
+          alert("Message sent successfully!");
+          document.getElementById("contact-form").reset();
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalBtnText;
           lucide.createIcons();
-        }
-      });
+        })
+        .catch(function (error) {
+          alert("Failed to send message. Try again.");
+          console.error(error);
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+          lucide.createIcons();
+        });
+    }
+
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', sendMail);
     }
 
     // Dynamic GitHub Stats
